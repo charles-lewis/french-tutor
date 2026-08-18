@@ -45,19 +45,17 @@ All data files live in `data/`.
 
 ### Verb Trainer
 
-| File            | Description                                         |
-|-----------------|-----------------------------------------------------|
-| `verbs.json`    | Verb conjugation dataset (54 verbs, 6 tenses each)  |
-| `progress.json` | Per-item progress (auto-created, tracks learning)   |
-| `config.json`   | Persisted session settings (tense scope)            |
+| File          | Description                                        |
+|---------------|----------------------------------------------------|
+| `verbs.json`  | Verb conjugation dataset (54 verbs, 6 tenses each) |
+| `config.json` | Persisted session settings (tense scope)           |
 
 ### Vocabulary Trainer
 
-| File                | Description                                 |
-|---------------------|---------------------------------------------|
-| `vocab_apartment.json` | Themed vocabulary set (apartment/renting)  |
-| `vocab_progress.json`  | Per-item progress (auto-created)           |
-| `vocab_config.json`    | Persisted session settings and data paths  |
+| File                | Description                                |
+|---------------------|--------------------------------------------|
+| `vocab_apartment.json` | Themed vocabulary set (apartment/renting) |
+| `vocab_config.json`    | Persisted session settings and data paths |
 
 ## Data Formats
 
@@ -119,14 +117,14 @@ Each verb must provide all six tenses: `present`, `imparfait`, `futur_simple`, `
 - **`pos`** — part of speech: `noun`, `verb`, `adjective`, `adverb`, `phrase`
 - **`notes`** — optional usage notes (shown after correct answers, never scored)
 
-### Progress files (progress.json / vocab_progress.json)
+## Progress Files
 
-Auto-managed by the trainers. Keys are:
+Progress files are created automatically in `data/` when you run a trainer. They are not tracked in git (each user generates their own).
 
-- Verb trainer: `{infinitive}|{tense}|{person_index}` (e.g. `venir|present|0`)
-- Vocabulary trainer: `{id}|{direction}` (e.g. `le_bail|fr2en`)
+- `data/progress.json` — verb trainer progress
+- `data/vocab_progress.json` — vocabulary trainer progress
 
-Each entry tracks success/failure counts, streak, last result, and recent response times.
+Each file maps an item key to learning statistics. Verb trainer keys are `{infinitive}|{tense}|{person_index}` (e.g. `venir|present|0`). Vocabulary trainer keys are `{id}|{direction}` (e.g. `le_bail|fr2en`). Each entry tracks success/failure counts, streak, last result, and recent response times. The trainers use this data for spaced repetition scheduling — items you get wrong resurface sooner, while mastered items fade.
 
 ## Testing
 
@@ -137,4 +135,3 @@ python -m unittest discover tests -v
 ## Acknowledgments
 
 Built with [opencode](https://opencode.ai), an AI coding assistant.
-
