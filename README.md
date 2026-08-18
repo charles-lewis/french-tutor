@@ -133,3 +133,8 @@ Each entry tracks success/failure counts, streak, last result, and recent respon
 ```
 python -m unittest discover tests -v
 ```
+
+## Acknowledgments
+
+Built with [opencode](https://opencode.ai), an AI coding assistant.
+
