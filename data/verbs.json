@@ -1,0 +1,4382 @@
+{
+  "verbs": [
+    {
+      "infinitive": "venir",
+      "translation": "to come",
+      "group": "ir_irregular",
+      "auxiliary": "être",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "viens",
+            "viens",
+            "vient",
+            "venons",
+            "venez",
+            "viennent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "venais",
+            "venais",
+            "venait",
+            "venions",
+            "veniez",
+            "venaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "viendrai",
+            "viendras",
+            "viendra",
+            "viendrons",
+            "viendrez",
+            "viendront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais venir",
+            "vas venir",
+            "va venir",
+            "allons venir",
+            "allez venir",
+            "vont venir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "viendrais",
+            "viendrais",
+            "viendrait",
+            "viendrions",
+            "viendriez",
+            "viendraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "suis venu",
+            "es venu",
+            "est venu",
+            "sommes venus",
+            "êtes venus",
+            "sont venus"
+          ],
+          "feminine": [
+            "suis venue",
+            "es venue",
+            "est venue",
+            "sommes venues",
+            "êtes venues",
+            "sont venues"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "tenir",
+      "translation": "to hold",
+      "group": "ir_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "tiens",
+            "tiens",
+            "tient",
+            "tenons",
+            "tenez",
+            "tiennent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "tenais",
+            "tenais",
+            "tenait",
+            "tenions",
+            "teniez",
+            "tenaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "tiendrai",
+            "tiendras",
+            "tiendra",
+            "tiendrons",
+            "tiendrez",
+            "tiendront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais tenir",
+            "vas tenir",
+            "va tenir",
+            "allons tenir",
+            "allez tenir",
+            "vont tenir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "tiendrais",
+            "tiendrais",
+            "tiendrait",
+            "tiendrions",
+            "tiendriez",
+            "tiendraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai tenu",
+            "as tenu",
+            "a tenu",
+            "avons tenu",
+            "avez tenu",
+            "ont tenu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "faire",
+      "translation": "to do / to make",
+      "group": "re_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "fais",
+            "fais",
+            "fait",
+            "faisons",
+            "faites",
+            "font"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "faisais",
+            "faisais",
+            "faisait",
+            "faisions",
+            "faisiez",
+            "faisaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "ferai",
+            "feras",
+            "fera",
+            "ferons",
+            "ferez",
+            "feront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais faire",
+            "vas faire",
+            "va faire",
+            "allons faire",
+            "allez faire",
+            "vont faire"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "ferais",
+            "ferais",
+            "ferait",
+            "ferions",
+            "feriez",
+            "feraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai fait",
+            "as fait",
+            "a fait",
+            "avons fait",
+            "avez fait",
+            "ont fait"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "être",
+      "translation": "to be",
+      "group": "irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "suis",
+            "es",
+            "est",
+            "sommes",
+            "êtes",
+            "sont"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "étais",
+            "étais",
+            "était",
+            "étions",
+            "étiez",
+            "étaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "serai",
+            "seras",
+            "sera",
+            "serons",
+            "serez",
+            "seront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais être",
+            "vas être",
+            "va être",
+            "allons être",
+            "allez être",
+            "vont être"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "serais",
+            "serais",
+            "serait",
+            "serions",
+            "seriez",
+            "seraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai été",
+            "as été",
+            "a été",
+            "avons été",
+            "avez été",
+            "ont été"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "avoir",
+      "translation": "to have",
+      "group": "irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "ai",
+            "as",
+            "a",
+            "avons",
+            "avez",
+            "ont"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "avais",
+            "avais",
+            "avait",
+            "avions",
+            "aviez",
+            "avaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "aurai",
+            "auras",
+            "aura",
+            "aurons",
+            "aurez",
+            "auront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais avoir",
+            "vas avoir",
+            "va avoir",
+            "allons avoir",
+            "allez avoir",
+            "vont avoir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "aurais",
+            "aurais",
+            "aurait",
+            "aurions",
+            "auriez",
+            "auraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai eu",
+            "as eu",
+            "a eu",
+            "avons eu",
+            "avez eu",
+            "ont eu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "aller",
+      "translation": "to go",
+      "group": "ir_irregular",
+      "auxiliary": "être",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "vais",
+            "vas",
+            "va",
+            "allons",
+            "allez",
+            "vont"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "allais",
+            "allais",
+            "allait",
+            "allions",
+            "alliez",
+            "allaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "irai",
+            "iras",
+            "ira",
+            "irons",
+            "irez",
+            "iront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais aller",
+            "vas aller",
+            "va aller",
+            "allons aller",
+            "allez aller",
+            "vont aller"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "irais",
+            "irais",
+            "irait",
+            "irions",
+            "iriez",
+            "iraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "suis allé",
+            "es allé",
+            "est allé",
+            "sommes allés",
+            "êtes allés",
+            "sont allés"
+          ],
+          "feminine": [
+            "suis allée",
+            "es allée",
+            "est allée",
+            "sommes allées",
+            "êtes allées",
+            "sont allées"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "pouvoir",
+      "translation": "can / to be able to",
+      "group": "irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "peux",
+            "peux",
+            "peut",
+            "pouvons",
+            "pouvez",
+            "peuvent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "pouvais",
+            "pouvais",
+            "pouvait",
+            "pouvions",
+            "pouviez",
+            "pouvaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "pourrai",
+            "pourras",
+            "pourra",
+            "pourrons",
+            "pourrez",
+            "pourront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais pouvoir",
+            "vas pouvoir",
+            "va pouvoir",
+            "allons pouvoir",
+            "allez pouvoir",
+            "vont pouvoir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "pourrais",
+            "pourrais",
+            "pourrait",
+            "pourrions",
+            "pourriez",
+            "pourraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai pu",
+            "as pu",
+            "a pu",
+            "avons pu",
+            "avez pu",
+            "ont pu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "vouloir",
+      "translation": "to want",
+      "group": "irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "veux",
+            "veux",
+            "veut",
+            "voulons",
+            "voulez",
+            "veulent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "voulais",
+            "voulais",
+            "voulait",
+            "voulions",
+            "vouliez",
+            "voulaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "voudrai",
+            "voudras",
+            "voudra",
+            "voudrons",
+            "voudrez",
+            "voudront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais vouloir",
+            "vas vouloir",
+            "va vouloir",
+            "allons vouloir",
+            "allez vouloir",
+            "vont vouloir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "voudrais",
+            "voudrais",
+            "voudrait",
+            "voudrions",
+            "voudriez",
+            "voudraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai voulu",
+            "as voulu",
+            "a voulu",
+            "avons voulu",
+            "avez voulu",
+            "ont voulu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "devoir",
+      "translation": "must / to have to",
+      "group": "irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "dois",
+            "dois",
+            "doit",
+            "devons",
+            "devez",
+            "doivent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "devais",
+            "devais",
+            "devait",
+            "devions",
+            "deviez",
+            "devaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "devrai",
+            "devras",
+            "devra",
+            "devrons",
+            "devrez",
+            "devront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais devoir",
+            "vas devoir",
+            "va devoir",
+            "allons devoir",
+            "allez devoir",
+            "vont devoir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "devrais",
+            "devrais",
+            "devrait",
+            "devrions",
+            "devriez",
+            "devraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai dû",
+            "as dû",
+            "a dû",
+            "avons dû",
+            "avez dû",
+            "ont dû"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "prendre",
+      "translation": "to take",
+      "group": "re_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "prends",
+            "prends",
+            "prend",
+            "prenons",
+            "prenez",
+            "prennent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "prenais",
+            "prenais",
+            "prenait",
+            "prenions",
+            "preniez",
+            "prenaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "prendrai",
+            "prendras",
+            "prendra",
+            "prendrons",
+            "prendrez",
+            "prendront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais prendre",
+            "vas prendre",
+            "va prendre",
+            "allons prendre",
+            "allez prendre",
+            "vont prendre"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "prendrais",
+            "prendrais",
+            "prendrait",
+            "prendrions",
+            "prendriez",
+            "prendraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai pris",
+            "as pris",
+            "a pris",
+            "avons pris",
+            "avez pris",
+            "ont pris"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "mettre",
+      "translation": "to put",
+      "group": "re_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "mets",
+            "mets",
+            "met",
+            "mettons",
+            "mettez",
+            "mettent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "mettais",
+            "mettais",
+            "mettait",
+            "mettions",
+            "mettiez",
+            "mettaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "mettrai",
+            "mettras",
+            "mettra",
+            "mettrons",
+            "mettrez",
+            "mettront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais mettre",
+            "vas mettre",
+            "va mettre",
+            "allons mettre",
+            "allez mettre",
+            "vont mettre"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "mettrais",
+            "mettrais",
+            "mettrait",
+            "mettrions",
+            "mettriez",
+            "mettraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai mis",
+            "as mis",
+            "a mis",
+            "avons mis",
+            "avez mis",
+            "ont mis"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "dire",
+      "translation": "to say / to tell",
+      "group": "re_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "dis",
+            "dis",
+            "dit",
+            "disons",
+            "dites",
+            "disent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "disais",
+            "disais",
+            "disait",
+            "disions",
+            "disiez",
+            "disaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "dirai",
+            "diras",
+            "dira",
+            "dirons",
+            "direz",
+            "diront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais dire",
+            "vas dire",
+            "va dire",
+            "allons dire",
+            "allez dire",
+            "vont dire"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "dirais",
+            "dirais",
+            "dirait",
+            "dirions",
+            "diriez",
+            "diraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai dit",
+            "as dit",
+            "a dit",
+            "avons dit",
+            "avez dit",
+            "ont dit"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "voir",
+      "translation": "to see",
+      "group": "ir_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "vois",
+            "vois",
+            "voit",
+            "voyons",
+            "voyez",
+            "voient"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "voyais",
+            "voyais",
+            "voyait",
+            "voyions",
+            "voyiez",
+            "voyaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "verrai",
+            "verras",
+            "verra",
+            "verrons",
+            "verrez",
+            "verront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais voir",
+            "vas voir",
+            "va voir",
+            "allons voir",
+            "allez voir",
+            "vont voir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "verrais",
+            "verrais",
+            "verrait",
+            "verrions",
+            "verriez",
+            "verraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai vu",
+            "as vu",
+            "a vu",
+            "avons vu",
+            "avez vu",
+            "ont vu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "boire",
+      "translation": "to drink",
+      "group": "re_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "bois",
+            "bois",
+            "boit",
+            "buvons",
+            "buvez",
+            "boivent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "buvais",
+            "buvais",
+            "buvait",
+            "buvions",
+            "buviez",
+            "buvaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "boirai",
+            "boiras",
+            "boira",
+            "boirons",
+            "boirez",
+            "boiront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais boire",
+            "vas boire",
+            "va boire",
+            "allons boire",
+            "allez boire",
+            "vont boire"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "boirais",
+            "boirais",
+            "boirait",
+            "boirions",
+            "boiriez",
+            "boiraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai bu",
+            "as bu",
+            "a bu",
+            "avons bu",
+            "avez bu",
+            "ont bu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "savoir",
+      "translation": "to know",
+      "group": "irregular",
+      "auxiliary": "avoir",
+      "notes": "to know (a fact / how to)",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "sais",
+            "sais",
+            "sait",
+            "savons",
+            "savez",
+            "savent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "savais",
+            "savais",
+            "savait",
+            "savions",
+            "saviez",
+            "savaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "saurai",
+            "sauras",
+            "saura",
+            "saurons",
+            "saurez",
+            "sauront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais savoir",
+            "vas savoir",
+            "va savoir",
+            "allons savoir",
+            "allez savoir",
+            "vont savoir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "saurais",
+            "saurais",
+            "saurait",
+            "saurions",
+            "sauriez",
+            "sauraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai su",
+            "as su",
+            "a su",
+            "avons su",
+            "avez su",
+            "ont su"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "connaître",
+      "translation": "to know",
+      "group": "re_irregular",
+      "auxiliary": "avoir",
+      "notes": "to know (a person / place)",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "connais",
+            "connais",
+            "connaît",
+            "connaissons",
+            "connaissez",
+            "connaissent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "connaissais",
+            "connaissais",
+            "connaissait",
+            "connaissions",
+            "connaissiez",
+            "connaissaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "connaîtrai",
+            "connaîtras",
+            "connaîtra",
+            "connaîtrons",
+            "connaîtrez",
+            "connaîtront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais connaître",
+            "vas connaître",
+            "va connaître",
+            "allons connaître",
+            "allez connaître",
+            "vont connaître"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "connaîtrais",
+            "connaîtrais",
+            "connaîtrait",
+            "connaitrions",
+            "connaîtriez",
+            "connaîtraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai connu",
+            "as connu",
+            "a connu",
+            "avons connu",
+            "avez connu",
+            "ont connu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "lire",
+      "translation": "to read",
+      "group": "re_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "lis",
+            "lis",
+            "lit",
+            "lisons",
+            "lisez",
+            "lisent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "lisais",
+            "lisais",
+            "lisait",
+            "lisions",
+            "lisiez",
+            "lisaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "lirai",
+            "liras",
+            "lira",
+            "lirons",
+            "lirez",
+            "liront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais lire",
+            "vas lire",
+            "va lire",
+            "allons lire",
+            "allez lire",
+            "vont lire"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "lirais",
+            "lirais",
+            "lirait",
+            "lirions",
+            "liriez",
+            "liraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai lu",
+            "as lu",
+            "a lu",
+            "avons lu",
+            "avez lu",
+            "ont lu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "écrire",
+      "translation": "to write",
+      "group": "re_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "écris",
+            "écris",
+            "écrit",
+            "écrivons",
+            "écrivez",
+            "écrivent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "écrivais",
+            "écrivais",
+            "écrivait",
+            "écrivions",
+            "écriviez",
+            "écrivaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "écrirai",
+            "écriras",
+            "écrira",
+            "écrirons",
+            "écrirez",
+            "écriront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais écrire",
+            "vas écrire",
+            "va écrire",
+            "allons écrire",
+            "allez écrire",
+            "vont écrire"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "écrirais",
+            "écrirais",
+            "écrirait",
+            "écririons",
+            "écririez",
+            "écriraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai écrit",
+            "as écrit",
+            "a écrit",
+            "avons écrit",
+            "avez écrit",
+            "ont écrit"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "sortir",
+      "translation": "to go out",
+      "group": "ir_irregular",
+      "auxiliary": "être",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "sors",
+            "sors",
+            "sort",
+            "sortons",
+            "sortez",
+            "sortent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "sortais",
+            "sortais",
+            "sortait",
+            "sortions",
+            "sortiez",
+            "sortaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "sortirai",
+            "sortiras",
+            "sortira",
+            "sortirons",
+            "sortirez",
+            "sortiront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais sortir",
+            "vas sortir",
+            "va sortir",
+            "allons sortir",
+            "allez sortir",
+            "vont sortir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "sortirais",
+            "sortirais",
+            "sortirait",
+            "sortirions",
+            "sortiriez",
+            "sortiraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "suis sorti",
+            "es sorti",
+            "est sorti",
+            "sommes sortis",
+            "êtes sortis",
+            "sont sortis"
+          ],
+          "feminine": [
+            "suis sortie",
+            "es sortie",
+            "est sortie",
+            "sommes sorties",
+            "êtes sorties",
+            "sont sorties"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "partir",
+      "translation": "to leave",
+      "group": "ir_irregular",
+      "auxiliary": "être",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "pars",
+            "pars",
+            "part",
+            "partons",
+            "partez",
+            "partent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "partais",
+            "partais",
+            "partait",
+            "partions",
+            "partiez",
+            "partaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "partirai",
+            "partiras",
+            "partira",
+            "partirons",
+            "partirez",
+            "partiront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais partir",
+            "vas partir",
+            "va partir",
+            "allons partir",
+            "allez partir",
+            "vont partir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "partirais",
+            "partirais",
+            "partirait",
+            "partirions",
+            "partiriez",
+            "partiraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "suis parti",
+            "es parti",
+            "est parti",
+            "sommes partis",
+            "êtes partis",
+            "sont partis"
+          ],
+          "feminine": [
+            "suis partie",
+            "es partie",
+            "est partie",
+            "sommes parties",
+            "êtes parties",
+            "sont parties"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "dormir",
+      "translation": "to sleep",
+      "group": "ir_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "dors",
+            "dors",
+            "dort",
+            "dormons",
+            "dormez",
+            "dorment"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "dormais",
+            "dormais",
+            "dormait",
+            "dormions",
+            "dormiez",
+            "dormaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "dormirai",
+            "dormiras",
+            "dormira",
+            "dormirons",
+            "dormirez",
+            "dormiront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais dormir",
+            "vas dormir",
+            "va dormir",
+            "allons dormir",
+            "allez dormir",
+            "vont dormir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "dormirais",
+            "dormirais",
+            "dormirait",
+            "dormirions",
+            "dormiriez",
+            "dormiraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai dormi",
+            "as dormi",
+            "a dormi",
+            "avons dormi",
+            "avez dormi",
+            "ont dormi"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "ouvrir",
+      "translation": "to open",
+      "group": "ir_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "ouvre",
+            "ouvres",
+            "ouvre",
+            "ouvrons",
+            "ouvrez",
+            "ouvrent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "ouvrais",
+            "ouvrais",
+            "ouvrait",
+            "ouvrions",
+            "ouvriez",
+            "ouvraient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "ouvrirai",
+            "ouvriras",
+            "ouvrira",
+            "ouvrirons",
+            "ouvrirez",
+            "ouvriront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais ouvrir",
+            "vas ouvrir",
+            "va ouvrir",
+            "allons ouvrir",
+            "allez ouvrir",
+            "vont ouvrir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "ouvrirais",
+            "ouvrirais",
+            "ouvrirait",
+            "ouvririons",
+            "ouvririez",
+            "ouvriraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai ouvert",
+            "as ouvert",
+            "a ouvert",
+            "avons ouvert",
+            "avez ouvert",
+            "ont ouvert"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "parler",
+      "translation": "to speak",
+      "group": "er_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "parle",
+            "parles",
+            "parle",
+            "parlons",
+            "parlez",
+            "parlent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "parlais",
+            "parlais",
+            "parlait",
+            "parlions",
+            "parliez",
+            "parlaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "parlerai",
+            "parleras",
+            "parlera",
+            "parlerons",
+            "parlerez",
+            "parleront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais parler",
+            "vas parler",
+            "va parler",
+            "allons parler",
+            "allez parler",
+            "vont parler"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "parlerais",
+            "parlerais",
+            "parlerait",
+            "parlerions",
+            "parleriez",
+            "parleraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai parlé",
+            "as parlé",
+            "a parlé",
+            "avons parlé",
+            "avez parlé",
+            "ont parlé"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "finir",
+      "translation": "to finish",
+      "group": "ir_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "finis",
+            "finis",
+            "finit",
+            "finissons",
+            "finissez",
+            "finissent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "finissais",
+            "finissais",
+            "finissait",
+            "finissions",
+            "finissiez",
+            "finissaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "finirai",
+            "finiras",
+            "finira",
+            "finirons",
+            "finirez",
+            "finiront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais finir",
+            "vas finir",
+            "va finir",
+            "allons finir",
+            "allez finir",
+            "vont finir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "finirais",
+            "finirais",
+            "finirait",
+            "finirions",
+            "finiriez",
+            "finiraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai fini",
+            "as fini",
+            "a fini",
+            "avons fini",
+            "avez fini",
+            "ont fini"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "fermer",
+      "translation": "to close",
+      "group": "er_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "ferme",
+            "fermes",
+            "ferme",
+            "fermons",
+            "fermez",
+            "ferment"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "fermais",
+            "fermais",
+            "fermait",
+            "fermions",
+            "fermiez",
+            "fermaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "fermerai",
+            "fermeras",
+            "fermera",
+            "fermerons",
+            "fermerez",
+            "fermeront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais fermer",
+            "vas fermer",
+            "va fermer",
+            "allons fermer",
+            "allez fermer",
+            "vont fermer"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "fermerais",
+            "fermerais",
+            "fermerait",
+            "fermerions",
+            "fermeriez",
+            "fermeraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai fermé",
+            "as fermé",
+            "a fermé",
+            "avons fermé",
+            "avez fermé",
+            "ont fermé"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "donner",
+      "translation": "to give",
+      "group": "er_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "donne",
+            "donnes",
+            "donne",
+            "donnons",
+            "donnez",
+            "donnent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "donnais",
+            "donnais",
+            "donnait",
+            "donnions",
+            "donniez",
+            "donnaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "donnerai",
+            "donneras",
+            "donnera",
+            "donnerons",
+            "donnerez",
+            "donneront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais donner",
+            "vas donner",
+            "va donner",
+            "allons donner",
+            "allez donner",
+            "vont donner"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "donnerais",
+            "donnerais",
+            "donnerait",
+            "donnerions",
+            "donneriez",
+            "donneraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai donné",
+            "as donné",
+            "a donné",
+            "avons donné",
+            "avez donné",
+            "ont donné"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "trouver",
+      "translation": "to find",
+      "group": "er_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "trouve",
+            "trouves",
+            "trouve",
+            "trouvons",
+            "trouvez",
+            "trouvent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "trouvais",
+            "trouvais",
+            "trouvait",
+            "trouvions",
+            "trouviez",
+            "trouvaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "trouverai",
+            "trouveras",
+            "trouvera",
+            "trouverons",
+            "trouverez",
+            "trouveront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais trouver",
+            "vas trouver",
+            "va trouver",
+            "allons trouver",
+            "allez trouver",
+            "vont trouver"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "trouverais",
+            "trouverais",
+            "trouverait",
+            "trouverions",
+            "trouveriez",
+            "trouveraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai trouvé",
+            "as trouvé",
+            "a trouvé",
+            "avons trouvé",
+            "avez trouvé",
+            "ont trouvé"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "penser",
+      "translation": "to think",
+      "group": "er_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "pense",
+            "penses",
+            "pense",
+            "pensons",
+            "pensez",
+            "pensent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "pensais",
+            "pensais",
+            "pensait",
+            "pensions",
+            "pensiez",
+            "pensaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "penserai",
+            "penseras",
+            "pensera",
+            "penserons",
+            "penserez",
+            "penseront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais penser",
+            "vas penser",
+            "va penser",
+            "allons penser",
+            "allez penser",
+            "vont penser"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "penserais",
+            "penserais",
+            "penserait",
+            "penserions",
+            "penseriez",
+            "penseraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai pensé",
+            "as pensé",
+            "a pensé",
+            "avons pensé",
+            "avez pensé",
+            "ont pensé"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "attendre",
+      "translation": "to wait",
+      "group": "re_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "attends",
+            "attends",
+            "attend",
+            "attendons",
+            "attendez",
+            "attendent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "attendais",
+            "attendais",
+            "attendait",
+            "attendions",
+            "attendiez",
+            "attendaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "attendrai",
+            "attendras",
+            "attendra",
+            "attendrons",
+            "attendrez",
+            "attendront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais attendre",
+            "vas attendre",
+            "va attendre",
+            "allons attendre",
+            "allez attendre",
+            "vont attendre"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "attendrais",
+            "attendrais",
+            "attendrait",
+            "attendrions",
+            "attendriez",
+            "attendraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai attendu",
+            "as attendu",
+            "a attendu",
+            "avons attendu",
+            "avez attendu",
+            "ont attendu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "entendre",
+      "translation": "to hear",
+      "group": "re_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "entends",
+            "entends",
+            "entend",
+            "entendons",
+            "entendez",
+            "entendent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "entendais",
+            "entendais",
+            "entendait",
+            "entendions",
+            "entendiez",
+            "entendaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "entendrai",
+            "entendras",
+            "entendra",
+            "entendrons",
+            "entendrez",
+            "entendront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais entendre",
+            "vas entendre",
+            "va entendre",
+            "allons entendre",
+            "allez entendre",
+            "vont entendre"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "entendrais",
+            "entendrais",
+            "entendrait",
+            "entendrions",
+            "entendriez",
+            "entendraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai entendu",
+            "as entendu",
+            "a entendu",
+            "avons entendu",
+            "avez entendu",
+            "ont entendu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "répondre",
+      "translation": "to answer",
+      "group": "re_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "réponds",
+            "réponds",
+            "répond",
+            "répondons",
+            "répondez",
+            "répondent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "répondais",
+            "répondais",
+            "répondait",
+            "répondions",
+            "répondiez",
+            "répondaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "répondrai",
+            "répondras",
+            "répondra",
+            "répondrons",
+            "répondrez",
+            "répondront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais répondre",
+            "vas répondre",
+            "va répondre",
+            "allons répondre",
+            "allez répondre",
+            "vont répondre"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "répondrais",
+            "répondrais",
+            "répondrait",
+            "répondrions",
+            "répondriez",
+            "répondraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai répondu",
+            "as répondu",
+            "a répondu",
+            "avons répondu",
+            "avez répondu",
+            "ont répondu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "aimer",
+      "translation": "to love / to like",
+      "group": "er_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "aime",
+            "aimes",
+            "aime",
+            "aimons",
+            "aimez",
+            "aiment"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "aimais",
+            "aimais",
+            "aimait",
+            "aimions",
+            "aimiez",
+            "aimaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "aimerai",
+            "aimeras",
+            "aimera",
+            "aimerons",
+            "aimerez",
+            "aimeront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais aimer",
+            "vas aimer",
+            "va aimer",
+            "allons aimer",
+            "allez aimer",
+            "vont aimer"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "aimerais",
+            "aimerais",
+            "aimerait",
+            "aimerions",
+            "aimeriez",
+            "aimeraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai aimé",
+            "as aimé",
+            "a aimé",
+            "avons aimé",
+            "avez aimé",
+            "ont aimé"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "jouer",
+      "translation": "to play",
+      "group": "er_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "joue",
+            "joues",
+            "joue",
+            "jouons",
+            "jouez",
+            "jouent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "jouais",
+            "jouais",
+            "jouait",
+            "jouions",
+            "jouiez",
+            "jouaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "jouerai",
+            "joueras",
+            "jouera",
+            "jouerons",
+            "jouerez",
+            "joueront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais jouer",
+            "vas jouer",
+            "va jouer",
+            "allons jouer",
+            "allez jouer",
+            "vont jouer"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "jouerais",
+            "jouerais",
+            "jouerait",
+            "jouerions",
+            "joueriez",
+            "joueraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai joué",
+            "as joué",
+            "a joué",
+            "avons joué",
+            "avez joué",
+            "ont joué"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "travailler",
+      "translation": "to work",
+      "group": "er_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "travaille",
+            "travailles",
+            "travaille",
+            "travaillons",
+            "travaillez",
+            "travaillent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "travaillais",
+            "travaillais",
+            "travaillait",
+            "travaillions",
+            "travailliez",
+            "travaillaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "travaillerai",
+            "travailleras",
+            "travaillera",
+            "travaillerons",
+            "travaillerez",
+            "travailleront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais travailler",
+            "vas travailler",
+            "va travailler",
+            "allons travailler",
+            "allez travailler",
+            "vont travailler"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "travaillerais",
+            "travaillerais",
+            "travaillerait",
+            "travaillerions",
+            "travailleriez",
+            "travailleraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai travaillé",
+            "as travaillé",
+            "a travaillé",
+            "avons travaillé",
+            "avez travaillé",
+            "ont travaillé"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "chanter",
+      "translation": "to sing",
+      "group": "er_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "chante",
+            "chantes",
+            "chante",
+            "chantons",
+            "chantez",
+            "chantent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "chantais",
+            "chantais",
+            "chantait",
+            "chantions",
+            "chantiez",
+            "chantaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "chanterai",
+            "chanteras",
+            "chantera",
+            "chanterons",
+            "chanterez",
+            "chanteront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais chanter",
+            "vas chanter",
+            "va chanter",
+            "allons chanter",
+            "allez chanter",
+            "vont chanter"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "chanterais",
+            "chanterais",
+            "chanterait",
+            "chanterions",
+            "chanteriez",
+            "chanteraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai chanté",
+            "as chanté",
+            "a chanté",
+            "avons chanté",
+            "avez chanté",
+            "ont chanté"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "marcher",
+      "translation": "to walk",
+      "group": "er_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "marche",
+            "marches",
+            "marche",
+            "marchons",
+            "marchez",
+            "marchent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "marchais",
+            "marchais",
+            "marchait",
+            "marchions",
+            "marchiez",
+            "marchaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "marcherai",
+            "marcheras",
+            "marchera",
+            "marcherons",
+            "marcherez",
+            "marcheront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais marcher",
+            "vas marcher",
+            "va marcher",
+            "allons marcher",
+            "allez marcher",
+            "vont marcher"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "marcherais",
+            "marcherais",
+            "marcherait",
+            "marcherions",
+            "marcheriez",
+            "marcheraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai marché",
+            "as marché",
+            "a marché",
+            "avons marché",
+            "avez marché",
+            "ont marché"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "porter",
+      "translation": "to carry / to wear",
+      "group": "er_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "porte",
+            "portes",
+            "porte",
+            "portons",
+            "portez",
+            "portent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "portais",
+            "portais",
+            "portait",
+            "portions",
+            "portiez",
+            "portaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "porterai",
+            "porteras",
+            "portera",
+            "porterons",
+            "porterez",
+            "porteront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais porter",
+            "vas porter",
+            "va porter",
+            "allons porter",
+            "allez porter",
+            "vont porter"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "porterais",
+            "porterais",
+            "porterait",
+            "porterions",
+            "porteriez",
+            "porteraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai porté",
+            "as porté",
+            "a porté",
+            "avons porté",
+            "avez porté",
+            "ont porté"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "manger",
+      "translation": "to eat",
+      "group": "er_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "mange",
+            "manges",
+            "mange",
+            "mangeons",
+            "mangez",
+            "mangent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "mangeais",
+            "mangeais",
+            "mangeait",
+            "mangions",
+            "mangiez",
+            "mangeaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "mangerai",
+            "mangeras",
+            "mangera",
+            "mangerons",
+            "mangerez",
+            "mangeront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais manger",
+            "vas manger",
+            "va manger",
+            "allons manger",
+            "allez manger",
+            "vont manger"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "mangerais",
+            "mangerais",
+            "mangerait",
+            "mangerions",
+            "mangeriez",
+            "mangeraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai mangé",
+            "as mangé",
+            "a mangé",
+            "avons mangé",
+            "avez mangé",
+            "ont mangé"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "rester",
+      "translation": "to stay",
+      "group": "er_regular",
+      "auxiliary": "être",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "reste",
+            "restes",
+            "reste",
+            "restons",
+            "restez",
+            "restent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "restais",
+            "restais",
+            "restait",
+            "restions",
+            "restiez",
+            "restaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "resterai",
+            "resteras",
+            "restera",
+            "resterons",
+            "resterez",
+            "resteront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais rester",
+            "vas rester",
+            "va rester",
+            "allons rester",
+            "allez rester",
+            "vont rester"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "resterais",
+            "resterais",
+            "resterait",
+            "resterions",
+            "resteriez",
+            "resteraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "suis resté",
+            "es resté",
+            "est resté",
+            "sommes restés",
+            "êtes restés",
+            "sont restés"
+          ],
+          "feminine": [
+            "suis restée",
+            "es restée",
+            "est restée",
+            "sommes restées",
+            "êtes restées",
+            "sont restées"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "tomber",
+      "translation": "to fall",
+      "group": "er_regular",
+      "auxiliary": "être",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "tombe",
+            "tombes",
+            "tombe",
+            "tombons",
+            "tombez",
+            "tombent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "tombais",
+            "tombais",
+            "tombait",
+            "tombions",
+            "tombiez",
+            "tombaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "tomberai",
+            "tomberas",
+            "tombera",
+            "tomberons",
+            "tomberez",
+            "tomberont"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais tomber",
+            "vas tomber",
+            "va tomber",
+            "allons tomber",
+            "allez tomber",
+            "vont tomber"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "tomberais",
+            "tomberais",
+            "tomberait",
+            "tomberions",
+            "tomberiez",
+            "tomberaient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "suis tombé",
+            "es tombé",
+            "est tombé",
+            "sommes tombés",
+            "êtes tombés",
+            "sont tombés"
+          ],
+          "feminine": [
+            "suis tombée",
+            "es tombée",
+            "est tombée",
+            "sommes tombées",
+            "êtes tombées",
+            "sont tombées"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "vendre",
+      "translation": "to sell",
+      "group": "re_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "vends",
+            "vends",
+            "vend",
+            "vendons",
+            "vendez",
+            "vendent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "vendais",
+            "vendais",
+            "vendait",
+            "vendions",
+            "vendiez",
+            "vendaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "vendrai",
+            "vendras",
+            "vendra",
+            "vendrons",
+            "vendrez",
+            "vendront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais vendre",
+            "vas vendre",
+            "va vendre",
+            "allons vendre",
+            "allez vendre",
+            "vont vendre"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "vendrais",
+            "vendrais",
+            "vendrait",
+            "vendrions",
+            "vendriez",
+            "vendraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai vendu",
+            "as vendu",
+            "a vendu",
+            "avons vendu",
+            "avez vendu",
+            "ont vendu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "perdre",
+      "translation": "to lose",
+      "group": "re_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "perds",
+            "perds",
+            "perd",
+            "perdons",
+            "perdez",
+            "perdent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "perdais",
+            "perdais",
+            "perdait",
+            "perdions",
+            "perdiez",
+            "perdaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "perdrai",
+            "perdras",
+            "perdra",
+            "perdrons",
+            "perdrez",
+            "perdront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais perdre",
+            "vas perdre",
+            "va perdre",
+            "allons perdre",
+            "allez perdre",
+            "vont perdre"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "perdrais",
+            "perdrais",
+            "perdrait",
+            "perdrions",
+            "perdriez",
+            "perdraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai perdu",
+            "as perdu",
+            "a perdu",
+            "avons perdu",
+            "avez perdu",
+            "ont perdu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "choisir",
+      "translation": "to choose",
+      "group": "ir_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "choisis",
+            "choisis",
+            "choisit",
+            "choisissons",
+            "choisissez",
+            "choisissent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "choisissais",
+            "choisissais",
+            "choisissait",
+            "choisissions",
+            "choisissiez",
+            "choisissaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "choisirai",
+            "choisiras",
+            "choisira",
+            "choisirons",
+            "choisirez",
+            "choisiront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais choisir",
+            "vas choisir",
+            "va choisir",
+            "allons choisir",
+            "allez choisir",
+            "vont choisir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "choisirais",
+            "choisirais",
+            "choisirait",
+            "choisirions",
+            "choisiriez",
+            "choisiraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai choisi",
+            "as choisi",
+            "a choisi",
+            "avons choisi",
+            "avez choisi",
+            "ont choisi"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "réussir",
+      "translation": "to succeed",
+      "group": "ir_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "réussis",
+            "réussis",
+            "réussit",
+            "réussissons",
+            "réussissez",
+            "réussissent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "réussissais",
+            "réussissais",
+            "réussissait",
+            "réussissions",
+            "réussissiez",
+            "réussissaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "réussirai",
+            "réussiras",
+            "réussira",
+            "réussirons",
+            "réussirez",
+            "réussiront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais réussir",
+            "vas réussir",
+            "va réussir",
+            "allons réussir",
+            "allez réussir",
+            "vont réussir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "réussirais",
+            "réussirais",
+            "réussirait",
+            "réussirions",
+            "réussiriez",
+            "réussiraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai réussi",
+            "as réussi",
+            "a réussi",
+            "avons réussi",
+            "avez réussi",
+            "ont réussi"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "grandir",
+      "translation": "to grow",
+      "group": "ir_regular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "grandis",
+            "grandis",
+            "grandit",
+            "grandissons",
+            "grandissez",
+            "grandissent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "grandissais",
+            "grandissais",
+            "grandissait",
+            "grandissions",
+            "grandissiez",
+            "grandissaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "grandirai",
+            "grandiras",
+            "grandira",
+            "grandirons",
+            "grandirez",
+            "grandiront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais grandir",
+            "vas grandir",
+            "va grandir",
+            "allons grandir",
+            "allez grandir",
+            "vont grandir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "grandirais",
+            "grandirais",
+            "grandirait",
+            "grandirions",
+            "grandiriez",
+            "grandiraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai grandi",
+            "as grandi",
+            "a grandi",
+            "avons grandi",
+            "avez grandi",
+            "ont grandi"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "courir",
+      "translation": "to run",
+      "group": "ir_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "cours",
+            "cours",
+            "court",
+            "courons",
+            "courez",
+            "courent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "courais",
+            "courais",
+            "courait",
+            "courions",
+            "couriez",
+            "couraient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "courrai",
+            "courras",
+            "courra",
+            "courrons",
+            "courrez",
+            "courront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais courir",
+            "vas courir",
+            "va courir",
+            "allons courir",
+            "allez courir",
+            "vont courir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "courrais",
+            "courrais",
+            "courrait",
+            "courrions",
+            "courriez",
+            "courraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai couru",
+            "as couru",
+            "a couru",
+            "avons couru",
+            "avez couru",
+            "ont couru"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "servir",
+      "translation": "to serve",
+      "group": "ir_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "sers",
+            "sers",
+            "sert",
+            "servons",
+            "servez",
+            "servent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "servais",
+            "servais",
+            "servait",
+            "servions",
+            "serviez",
+            "servaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "servirai",
+            "serviras",
+            "servira",
+            "servirons",
+            "servirez",
+            "serviront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais servir",
+            "vas servir",
+            "va servir",
+            "allons servir",
+            "allez servir",
+            "vont servir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "servirais",
+            "servirais",
+            "servirait",
+            "servirions",
+            "serviriez",
+            "serviraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai servi",
+            "as servi",
+            "a servi",
+            "avons servi",
+            "avez servi",
+            "ont servi"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "recevoir",
+      "translation": "to receive",
+      "group": "ir_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "reçois",
+            "reçois",
+            "reçoit",
+            "recevons",
+            "recevez",
+            "reçoivent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "recevais",
+            "recevais",
+            "recevait",
+            "recevions",
+            "receviez",
+            "recevaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "recevrai",
+            "recevras",
+            "recevra",
+            "recevrons",
+            "recevrez",
+            "recevront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais recevoir",
+            "vas recevoir",
+            "va recevoir",
+            "allons recevoir",
+            "allez recevoir",
+            "vont recevoir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "recevrais",
+            "recevrais",
+            "recevrait",
+            "recevrions",
+            "recevriez",
+            "recevraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai reçu",
+            "as reçu",
+            "a reçu",
+            "avons reçu",
+            "avez reçu",
+            "ont reçu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "offrir",
+      "translation": "to offer",
+      "group": "ir_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "offre",
+            "offres",
+            "offre",
+            "offrons",
+            "offrez",
+            "offrent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "offrais",
+            "offrais",
+            "offrait",
+            "offrions",
+            "offriez",
+            "offraient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "offrirai",
+            "offriras",
+            "offrira",
+            "offrirons",
+            "offrirez",
+            "offriront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais offrir",
+            "vas offrir",
+            "va offrir",
+            "allons offrir",
+            "allez offrir",
+            "vont offrir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "offrirais",
+            "offrirais",
+            "offrirait",
+            "offririons",
+            "offririez",
+            "offriraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai offert",
+            "as offert",
+            "a offert",
+            "avons offert",
+            "avez offert",
+            "ont offert"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "devenir",
+      "translation": "to become",
+      "group": "ir_irregular",
+      "auxiliary": "être",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "deviens",
+            "deviens",
+            "devient",
+            "devenons",
+            "devenez",
+            "deviennent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "devenais",
+            "devenais",
+            "devenait",
+            "devenions",
+            "deveniez",
+            "devenaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "deviendrai",
+            "deviendras",
+            "deviendra",
+            "deviendrons",
+            "deviendrez",
+            "deviendront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais devenir",
+            "vas devenir",
+            "va devenir",
+            "allons devenir",
+            "allez devenir",
+            "vont devenir"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "deviendrais",
+            "deviendrais",
+            "deviendrait",
+            "deviendrions",
+            "deviendriez",
+            "deviendraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "suis devenu",
+            "es devenu",
+            "est devenu",
+            "sommes devenus",
+            "êtes devenus",
+            "sont devenus"
+          ],
+          "feminine": [
+            "suis devenue",
+            "es devenue",
+            "est devenue",
+            "sommes devenues",
+            "êtes devenues",
+            "sont devenues"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "vivre",
+      "translation": "to live",
+      "group": "re_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "vis",
+            "vis",
+            "vit",
+            "vivons",
+            "vivez",
+            "vivent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "vivais",
+            "vivais",
+            "vivait",
+            "vivions",
+            "viviez",
+            "vivaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "vivrai",
+            "vivras",
+            "vivra",
+            "vivrons",
+            "vivrez",
+            "vivront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais vivre",
+            "vas vivre",
+            "va vivre",
+            "allons vivre",
+            "allez vivre",
+            "vont vivre"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "vivrais",
+            "vivrais",
+            "vivrait",
+            "vivrions",
+            "vivriez",
+            "vivraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai vécu",
+            "as vécu",
+            "a vécu",
+            "avons vécu",
+            "avez vécu",
+            "ont vécu"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "croire",
+      "translation": "to believe",
+      "group": "re_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "crois",
+            "crois",
+            "croit",
+            "croyons",
+            "croyez",
+            "croient"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "croyais",
+            "croyais",
+            "croyait",
+            "croyions",
+            "croyiez",
+            "croyaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "croirai",
+            "croiras",
+            "croira",
+            "croirons",
+            "croirez",
+            "croiront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais croire",
+            "vas croire",
+            "va croire",
+            "allons croire",
+            "allez croire",
+            "vont croire"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "croirais",
+            "croirais",
+            "croirait",
+            "croirions",
+            "croiriez",
+            "croiraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai cru",
+            "as cru",
+            "a cru",
+            "avons cru",
+            "avez cru",
+            "ont cru"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "suivre",
+      "translation": "to follow",
+      "group": "re_irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "suis",
+            "suis",
+            "suit",
+            "suivons",
+            "suivez",
+            "suivent"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "suivais",
+            "suivais",
+            "suivait",
+            "suivions",
+            "suiviez",
+            "suivaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "suivrai",
+            "suivras",
+            "suivra",
+            "suivrons",
+            "suivrez",
+            "suivront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais suivre",
+            "vas suivre",
+            "va suivre",
+            "allons suivre",
+            "allez suivre",
+            "vont suivre"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "suivrais",
+            "suivrais",
+            "suivrait",
+            "suivrions",
+            "suivriez",
+            "suivraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai suivi",
+            "as suivi",
+            "a suivi",
+            "avons suivi",
+            "avez suivi",
+            "ont suivi"
+          ]
+        }
+      }
+    },
+    {
+      "infinitive": "envoyer",
+      "translation": "to send",
+      "group": "irregular",
+      "auxiliary": "avoir",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "type": "simple",
+          "forms": [
+            "envoie",
+            "envoies",
+            "envoie",
+            "envoyons",
+            "envoyez",
+            "envoient"
+          ]
+        },
+        "imparfait": {
+          "label": "imparfait",
+          "type": "simple",
+          "forms": [
+            "envoyais",
+            "envoyais",
+            "envoyait",
+            "envoyions",
+            "envoyiez",
+            "envoyaient"
+          ]
+        },
+        "futur_simple": {
+          "label": "futur simple",
+          "type": "simple",
+          "forms": [
+            "enverrai",
+            "enverras",
+            "enverra",
+            "enverrons",
+            "enverrez",
+            "enverront"
+          ]
+        },
+        "futur_proche": {
+          "label": "futur proche",
+          "type": "periphrastic",
+          "forms": [
+            "vais envoyer",
+            "vas envoyer",
+            "va envoyer",
+            "allons envoyer",
+            "allez envoyer",
+            "vont envoyer"
+          ]
+        },
+        "conditionnel": {
+          "label": "conditionnel",
+          "type": "simple",
+          "forms": [
+            "enverrais",
+            "enverrais",
+            "enverrait",
+            "enverrions",
+            "enverriez",
+            "enverraient"
+          ]
+        },
+        "passé_composé": {
+          "label": "passé composé",
+          "type": "compound",
+          "forms": [
+            "ai envoyé",
+            "as envoyé",
+            "a envoyé",
+            "avons envoyé",
+            "avez envoyé",
+            "ont envoyé"
+          ]
+        }
+      }
+    }
+  ]
+}

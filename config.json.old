@@ -1,0 +1,10 @@
+{
+    "accent_strict": true,
+    "session_length": null,
+    "show_correct_after_success": false,
+    "weighted_sampling": true,
+    "last_mode": "Sequential Verb Mode",
+    "last_infinitive_filter": "All",
+    "last_tense_filter": "All",
+    "last_all_forms_infinitive_filter": "All"
+}

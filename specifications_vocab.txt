@@ -1,0 +1,691 @@
+# French Vocabulary Tutor — Program Specification
+
+Version: 1.0 (new program)
+
+## 1. Overview
+
+A local Python CLI tool for drilling French↔English word meanings. The learner is shown a
+French word (or phrase) and types its English meaning — or is shown an English meaning and
+types the French word. The trainer scores the answer, tracks long-term progress per
+(direction, word), and schedules items with the same weighted spaced-repetition approach as
+the verb trainer so errors resurface and mastered words fade.
+
+This is a **separate program** from the French Verb Trainer. It lives in its own package,
+uses its own progress and config files, and reuses only generic plumbing from the verb
+trainer (§13). The verb trainer is not modified.
+
+---
+
+## 2. Goals and Non-Goals
+
+### Goals
+- Bidirectional vocabulary drilling: French → English and English → French.
+- Type-the-answer training with tight feedback loops (no multiple choice).
+- Retry on a wrong answer: the same item is re-prompted until answered correctly.
+- Long-term progress that makes mistakes resurface automatically.
+- Support words beyond verbs (nouns, adjectives, adverbs, phrases) via a curated data file.
+- Reuse the verb dataset (`verbs.json`) as an automatic source of verb entries.
+- Data separated cleanly from engine; every data rule is machine-checkable.
+
+### Non-Goals (explicitly out of scope for v1.0)
+- Conjugation drilling — that is the verb trainer's job.
+- Multiple-choice / flashcard flip mode.
+- GUI, web front-end, or audio.
+- Sentence / context production exercises (notes may be shown, never scored).
+- Synonym scoring beyond the explicit accepted meanings in the data.
+
+---
+
+## 3. Core Concepts
+
+### 3.1 Direction
+
+A **direction** is one of:
+
+| Direction | Prompt shows | Learner types          |
+|-----------|--------------|------------------------|
+| `fr2en`   | French word  | English meaning(s)     |
+| `en2fr`   | English      | French word            |
+
+Direction is the vocabulary analog of the verb trainer's *tense scope*: it is selected at
+session setup, changeable mid-session, and persisted between sessions.
+
+### 3.2 Item
+
+An **item** is one `(entry_id, direction)` pair. The two directions of the same word are
+**separate items** with separate progress — a learner can know a word French→English but
+still miss it English→French. So each word contributes up to 2 items.
+
+### 3.3 Accepted answers
+
+Every entry may list **multiple accepted English meanings** (e.g. *faire* → "to do",
+"to make"). English→French items accept the single French term only.
+
+---
+
+## 4. Data Files
+
+The data files the tutor reads are **not hardcoded**. They are configured in the config
+file `vocab_config.json` (§11); each path is resolved relative to the project root. If a
+configured file is missing, the entry source is skipped; if a file exists but fails
+validation, the session aborts.
+
+The default config enables up to two entry sources:
+
+1. `verbs.json` — existing verb dataset, used as an **automatic source of verb entries**.
+2. `vocab.json` — new curated file for any vocabulary (verbs, nouns, adjectives, adverbs,
+   phrases). Entries here **override** same-`id` verb entries.
+
+The `vocab.json` entry source is optional: if a config omits it (or it is missing), the
+tutor runs on verb entries alone. Both configured sources are loaded and validated at
+startup; validation failures abort the session before any prompt is shown.
+
+### 4.1 verbs.json import
+
+For every verb in `verbs.json`, an entry is derived unless `vocab.json` already defines
+the same `id`:
+
+```json
+{
+  "id": "faire",
+  "fr": "faire",
+  "en": ["to do", "to make"],
+  "pos": "verb",
+  "group": "re_irregular"
+}
+```
+
+Rules:
+- `id` = the verb's `infinitive`.
+- `fr` = the verb's `infinitive`.
+- `en` = the verb's `translation` split on the separator `" / "` (e.g. `"to do / to make"`
+  → `["to do", "to make"]`). Each piece is trimmed.
+- `pos` = `"verb"`.
+- `group` is copied from the verb (informational only, not scored).
+- `verbs.json` is validated with the verb trainer's loader before import; any validation
+  error is reported and the session aborts.
+
+### 4.2 vocab.json format
+
+```json
+{
+  "entries": [
+    {
+      "id": "venir",
+      "fr": "venir",
+      "en": ["to come"],
+      "pos": "verb",
+      "group": "ir_irregular",
+      "notes": "motion verb, auxiliary être in compound tenses"
+    },
+    {
+      "id": "le_chat",
+      "fr": "le chat",
+      "en": ["the cat"],
+      "pos": "noun",
+      "notes": "masculine noun"
+    }
+  ]
+}
+```
+
+```
+Entry = {
+  id: str,            # stable unique key (also used in progress keys)
+  fr: str,            # French term shown / typed (may contain spaces, e.g. "le chat")
+  en: List[str],      # 1+ accepted English meanings, order = display order
+  pos: str,           # "verb" | "noun" | "adjective" | "adverb" | "phrase" (curator label)
+  group: str | null,  # optional, copied from verbs.json for verbs; informational
+  notes: str | null   # optional context/usage note; shown after a correct answer if present
+}
+```
+
+### 4.3 Validation rules (vocab loader must enforce)
+
+1. `id` is a non-empty, unique string across the merged dataset.
+2. `fr` is a non-empty string.
+3. `en` is a non-empty array of non-empty strings.
+4. `pos` is one of the five catalog values.
+5. `notes`, when present, is a string.
+6. Every `id` in `verbs.json` yields at least the auto-derived entry (unless overridden).
+7. Duplicate entries in `vocab.json` with the same `id` are rejected; an explicit entry
+   overrides the verbs.json-derived entry for that `id` (this is the only allowed overlap).
+
+---
+
+## 5. Session Setup
+
+On session start the learner selects:
+
+1. **Direction** — `fr2en`, `en2fr`, or `both` (random direction per prompt).
+2. **File scope** — which data file to quiz on: `all` (default), or a specific source
+   file (`verbs.json`, `vocab.json`, `vocab_apartment.json`, ...). Selecting `all`
+   merges every configured source. Part of speech stays configurable mid-session
+   via the `:pos` command but is no longer asked at startup.
+
+Selections persist between sessions so re-entry is one keystroke.
+
+---
+
+## 6. Training
+
+### 6.1 Prompt display
+
+- **fr2en**: show the French term, prompt for its English meaning(s):
+  `venir (verb)  ->  to come` — actually shown as a prompt line, e.g.
+  `venir   (to ___?)  >`. The accepted meanings are only revealed after a wrong answer.
+- **en2fr**: show the English meaning(s), prompt for the French term:
+  `to do / to make  (faire?)  >`.
+- When an entry has multiple meanings, `en2fr` shows them joined with `" / "`.
+- A hint of the part of speech may be shown in parentheses (e.g. `[verb]`).
+
+### 6.2 Answer evaluation
+
+- Input is trimmed and internal whitespace runs collapsed (reuse `modes.normalize`).
+- Case-insensitive comparison.
+- **fr2en**: correct if the normalized input equals the normalized form of **any** accepted
+  English meaning. Note "to do" and "to make" are separate accepted strings; the learner
+  types one accepted meaning, not all of them.
+- **en2fr**: correct if the normalized input equals the normalized French term.
+- **Accent strictness is fixed ON for French**: `ecrit` is wrong for *écrit*. English
+  meanings are compared the same way (a missing apostrophe or accent still fails).
+- An empty input counts as incorrect.
+
+### 6.3 Retry on wrong answer
+
+On an incorrect answer:
+
+1. Print the correction — the full list of accepted meanings (fr2en) or the French term
+   (en2fr) — highlighted in red.
+2. Re-prompt the **same item** (same direction, same word).
+3. The wrong attempt is recorded; when the item is finally answered correctly it is
+   recorded as a success and the drill advances.
+
+Each item therefore ends with a correct answer. "Perfect" recognition is tracked via
+first-try correctness (see §9).
+
+### 6.4 Feedback on success
+
+A correct answer prints `[OK]` plus **direction-specific enrichment**:
+
+- **fr2en** — if the entry has **multiple accepted English meanings**, list **all** of
+  them after the successful answer, joined with `" / "` in data order:
+  ```
+  faire > to do            [OK] faire -> to do / to make
+  ```
+  If there is a single meaning, no extra line is needed (the meaning the learner typed
+  is already correct).
+- **en2fr** — if the entry has `notes`, show them after the successful answer:
+  ```
+  to come > venir          [OK] to come -> venir   (motion verb, auxiliary être in
+                                                     compound tenses)
+  ```
+
+Rules:
+- The enrichment is **informational only** — it never affects scoring.
+- It appears on the final correct attempt of the item (i.e. after the retry loop ends),
+  not on intermediate wrong attempts.
+- When both apply to the same entry (multi-meaning *and* notes — only possible in `both`
+  mode or via `:mode` switching), each direction shows its own enrichment per §6.4.
+
+### 6.5 Flow
+
+```
+PICK ITEM (weighted sampling over direction + POS scope)
+  -> show prompt
+  -> read answer
+  -> wrong: show correction, record failure, re-prompt same item
+  -> correct: show [OK], record success
+       -> fr2en & multi-meaning: list all meanings
+       -> en2fr & notes present: show notes
+  -> pick next item
+```
+
+---
+
+## 7. Scheduling (Weighted Spaced Repetition)
+
+The verb trainer's `ItemState`, `record_answer`, and `weight` functions are reused
+unchanged. Only the item key and selection differ.
+
+### 7.1 Item state
+
+Same shape as the verb trainer (`success_count`, `failure_count`, `streak`,
+`longest_streak`, `last_seen`, `last_result`, `avg_response_time`, plus the last-10
+`recent_results` / `recent_times` windows).
+
+### 7.2 Key
+
+```
+{entry_id}|{direction}        e.g. "faire|fr2en", "faire|en2fr"
+```
+
+### 7.3 Selection
+
+Reuse the same weight formula and weighted-random sampling as the verb trainer §8.2–8.3,
+but over the active item set (directions × POS scope):
+
+```
+weight = (failure_count + 1) * freshness * recency_boost * noise / (streak + 1)
+```
+
+Unseen items default to `10 * noise`. Same behaviors: recent errors resurface, high-streak
+items fade, long-unseen items surge, no item ever reaches weight 0.
+
+---
+
+## 8. Inline Commands
+
+| Command     | Function                                    |
+|-------------|---------------------------------------------|
+| `:help`     | List all commands.                          |
+| `:quit`     | Show session report, save progress, exit.   |
+| `:skip`     | Skip the current prompt (counted as incorrect, no reveal). |
+| `:reveal`   | Show the correct answer, count as incorrect. |
+| `:repeat`   | Restart the current item's re-prompt loop (no score change). |
+| `:new`      | Return to session setup (§5).               |
+| `:mode`     | Change direction scope mid-session (`fr2en`, `en2fr`, `both`). |
+| `:pos`      | Change part-of-speech scope mid-session (`all` or comma-separated). |
+| `:stats`    | Show running session report and per-item metrics. |
+
+---
+
+## 9. Stats and Reports
+
+Reuse the verb trainer's reporting model, including the **last-10 sliding window** for
+accuracy and average time.
+
+### 9.1 Session report (at `:quit` and `:stats`)
+
+- Total prompts, correct, incorrect, accuracy %, elapsed time.
+- Distribution by direction and by part of speech.
+- **Weakest words** — the 5 entries with the lowest windowed accuracy (weighted average
+  across both directions, ties by recency of errors).
+
+### 9.2 Per-item metrics (via `:stats`)
+
+Same columns as the verb trainer, no `last` field:
+
+```
+faire   fr2en  n=10  acc= 60.0%  streak=3/5  avg=2.1s
+```
+
+- `n` = number of attempts in the sliding window (max 10).
+- `acc` = windowed accuracy over the last 10 results.
+- `streak` = current consecutive-correct streak, `longest` = best ever.
+- `avg` = mean response time over the last 10 responses.
+
+---
+
+## 10. Progress Storage — vocab_progress.json
+
+Same file format as the verb trainer's `progress.json` (atomic write: temp + rename), with
+item keys from §7.2:
+
+```json
+{
+  "faire|fr2en": { "success_count": 3, "failure_count": 1, "streak": 2, ... },
+  "faire|en2fr": { "success_count": 1, "failure_count": 2, "streak": 0, ... }
+}
+```
+
+Rules:
+- Keys not present are treated as unseen items.
+- On every answered prompt the matching item is updated and the file rewritten atomically.
+- **Separate file from the verb trainer's** `progress.json`; the two programs never touch
+  each other's progress.
+
+---
+
+## 11. Configuration — vocab_config.json
+
+A single JSON config file controls both session defaults **and** the data file paths.
+It lives at `data/vocab_config.json` by default; its own location is the one fixed path.
+
+```json
+{
+  "direction": "both",
+  "pos_scope": "all",
+  "sources": "all",
+  "data": {
+    "verbs":    "data/verbs.json",
+    "vocab":    ["data/vocab.json", "data/vocab_apartment.json"],
+    "progress": "data/vocab_progress.json"
+  }
+}
+```
+
+Rules:
+- `direction`, `pos_scope`, and `sources` persist the last-used setup (§5) so re-entry
+  is one keystroke. `sources` is `"all"` or a list of source file names
+  (`["vocab_apartment.json"]`).
+- `data` maps logical roles to file paths, resolved relative to the project root:
+  - `verbs` — the verb dataset used as a verb-entry source (§4.1). May be omitted or
+    point to a missing file to run without verb entries.
+  - `vocab` — one curated vocabulary file (§4.2), or a list of files merged in order;
+    entries from later files override earlier ones on matching `id`. May be omitted or
+    point to missing files to run on verb entries alone.
+  - `progress` — where per-item progress is written (§10). Defaults to
+    `data/vocab_progress.json`.
+- Unknown roles in `data` are ignored; the config file itself must be valid JSON and an
+  object, otherwise the session aborts with a clear message.
+- The file is rewritten (atomically) whenever `direction` or `sources` changes, preserving
+  the `data` section exactly as the user wrote it.
+- This is a **separate file from the verb trainer's** `config.json`; the two programs never
+  read or write each other's configuration or progress.
+
+---
+
+## 12. Session Flow
+
+```
+START
+  ├─ Load vocab_config.json (direction/pos defaults + data file paths)
+  ├─ Load + validate each configured entry source (verbs.json via verb loader,
+  │    vocab.json); merge → entries
+  ├─ Setup: direction scope, POS scope (persisted back to config)
+  ├─ Load progress file from config (§10)
+  ▼
+  LOOP
+  ├─ Pick next item (weighted sampling over active scope)
+  ├─ Prompt → read input
+  ├─ correct → record success, show [OK], next
+  ├─ wrong   → show correction, record failure, RE-PROMPT same item
+  ├─ command → :quit (report+save+exit) | :new (setup) | :mode / :pos / :skip /
+  │            :reveal / :repeat / :stats (handle, continue)
+  ▼
+  LOOP END
+```
+
+---
+
+## 13. Project Structure and Code Reuse
+
+```
+french-tutor/
+  trainer/                    # existing verb tutor (UNCHANGED)
+    main.py, engine.py, modes.py, progress.py, loader.py, consoleio.py
+  vocab/                      # NEW vocabulary tutor package
+    main.py                   # CLI entry, session loop, command dispatch
+    loader.py                 # vocab.json + verbs.json import + validation (§4)
+    engine.py                 # item selection over entries; reuses trainer.engine
+    modes.py                  # prompt display, answer evaluation, retry loop
+  data/
+    verbs.json                # reused as verb-entry source (§4.1)
+    vocab.json                # new curated vocabulary (§4.2)
+    progress.json             # verb trainer progress (untouched)
+    vocab_progress.json       # NEW vocabulary progress (§10)
+    config.json               # verb trainer config (untouched)
+    vocab_config.json         # NEW config: session defaults + data paths (§11)
+  vocab.py                    # NEW launcher (mirrors train.py)
+  specifications_vocab.txt    # this document
+```
+
+Reuse (imported from `trainer.*`, never duplicated):
+
+- `trainer.consoleio.input_line` — Unicode-safe Windows console input.
+- `trainer.modes.normalize`, `green`, `red`, `bold` — normalization and ANSI coloring.
+- `trainer.engine.ItemState`, `record_answer`, `weight` — scheduling state and formula.
+- `trainer.progress.load_progress`, `save_progress` — atomic JSON persistence.
+- `trainer.loader.load_verbs` — validation of configured verb-source files before import.
+
+Not reused (kept separate because the item model differs): the verb `Session`,
+`select_unit`, conjugation `prompt`, and tense machinery.
+
+---
+
+## 14. Testing
+
+The vocabulary tutor is tested with the same approach as the verb trainer: `unittest`,
+with tests under `tests/` (a `test_vocab_*.py` file per module). The examples below use
+the module layout from §13 (`vocab/loader.py`, `vocab/modes.py`, `vocab/engine.py`,
+`vocab/main.py`) and reuse `tests/_fixtures.py` for shared fixture entries.
+
+### 14.1 Loader tests — `tests/test_vocab_loader.py`
+
+Covers §4: merging verbs.json with vocab.json, override precedence, `" / "` splitting,
+and all validation rules from §4.3.
+
+```python
+# -*- coding: utf-8 -*-
+"""Vocabulary loader tests (spec §4)."""
+
+import json
+import os
+import tempfile
+import unittest
+
+from vocab import loader
+
+
+def _write(path, obj):
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(obj, fh, ensure_ascii=False)
+
+
+class LoaderTest(unittest.TestCase):
+    def setUp(self):
+        self.dir = tempfile.mkdtemp()
+        self.verbs_path = os.path.join(self.dir, "verbs.json")
+        self.vocab_path = os.path.join(self.dir, "vocab.json")
+
+    def _verbs(self):
+        return {
+            "verbs": [
+                {"infinitive": "faire", "translation": "to do / to make",
+                 "group": "re_irregular", "auxiliary": "avoir",
+                 "tenses": {"present": {"label": "présent", "type": "simple",
+                                        "forms": ["fais", "fais", "fait", "faisons",
+                                                  "faites", "font"]}}},
+                {"infinitive": "venir", "translation": "to come",
+                 "group": "ir_irregular", "auxiliary": "être",
+                 "tenses": {"present": {"label": "présent", "type": "simple",
+                                        "forms": ["viens", "viens", "vient", "venons",
+                                                  "venez", "viennent"]}}},
+            ]
+        }
+
+    def test_verbs_only_import(self):
+        _write(self.verbs_path, self._verbs())
+        entries = loader.load_entries(verbs=self.verbs_path, vocab=None)
+        by_id = {e["id"]: e for e in entries}
+        self.assertEqual(by_id["faire"]["en"], ["to do", "to make"])
+        self.assertEqual(by_id["faire"]["pos"], "verb")
+        self.assertEqual(by_id["venir"]["en"], ["to come"])
+
+    def test_vocab_overrides_verb_entry(self):
+        _write(self.verbs_path, self._verbs())
+        _write(self.vocab_path, {"entries": [
+            {"id": "faire", "fr": "faire", "en": ["to do", "to make"],
+             "pos": "verb", "notes": "extremely irregular"},
+        ]})
+        entries = loader.load_entries(verbs=self.verbs_path, vocab=self.vocab_path)
+        by_id = {e["id"]: e for e in entries}
+        self.assertEqual(by_id["faire"]["notes"], "extremely irregular")
+        self.assertNotIn("notes", by_id["venir"])
+
+    def test_duplicate_vocab_id_rejected(self):
+        _write(self.vocab_path, {"entries": [
+            {"id": "le_chat", "fr": "le chat", "en": ["the cat"], "pos": "noun"},
+            {"id": "le_chat", "fr": "le chat", "en": ["the cat"], "pos": "noun"},
+        ]})
+        with self.assertRaises(loader.ValidationError):
+            loader.load_entries(verbs=None, vocab=self.vocab_path)
+
+    def test_empty_english_rejected(self):
+        _write(self.vocab_path, {"entries": [
+            {"id": "x", "fr": "x", "en": [], "pos": "noun"},
+        ]})
+        with self.assertRaises(loader.ValidationError):
+            loader.load_entries(verbs=None, vocab=self.vocab_path)
+
+    def test_missing_source_yields_empty(self):
+        self.assertEqual(loader.load_entries(verbs=None, vocab=None), [])
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+### 14.2 Modes tests — `tests/test_vocab_modes.py`
+
+Covers §6: prompt lines for both directions, answer evaluation (multi-meaning fr2en,
+accent-strict en2fr), and success-feedback strings (§6.4).
+
+```python
+# -*- coding: utf-8 -*-
+"""Vocabulary prompt/evaluation tests (spec §6)."""
+
+import unittest
+
+from vocab import modes
+
+
+class ModesTest(unittest.TestCase):
+    def _entry(self, en=("to do", "to make"), notes=None):
+        return {"id": "faire", "fr": "faire", "en": list(en),
+                "pos": "verb", "notes": notes}
+
+    def test_prompt_fr2en(self):
+        line, expected = modes.prompt(self._entry(), "fr2en")
+        self.assertIn("faire", line)
+        self.assertEqual(expected, ["to do", "to make"])
+
+    def test_prompt_en2fr(self):
+        line, expected = modes.prompt(self._entry(), "en2fr")
+        self.assertIn("to do / to make", line)
+        self.assertEqual(expected, ["faire"])
+
+    def test_fr2en_any_meaning_accepted(self):
+        e = self._entry()
+        self.assertTrue(modes.is_correct(e, "fr2en", "to do"))
+        self.assertTrue(modes.is_correct(e, "fr2en", "To Make"))
+        self.assertFalse(modes.is_correct(e, "fr2en", "to make it"))
+
+    def test_en2fr_accent_strict(self):
+        e = self._entry(("to come",))
+        e["fr"] = "venir"
+        self.assertTrue(modes.is_correct(e, "en2fr", "venir"))
+        self.assertFalse(modes.is_correct(e, "en2fr", "veni"))
+
+    def test_success_feedback_lists_all_meanings(self):
+        e = self._entry()
+        out = modes.success_feedback(e, "fr2en")
+        self.assertEqual(out, "faire -> to do / to make")
+
+    def test_success_feedback_single_meaning_is_none(self):
+        e = self._entry(("to make",))
+        self.assertIsNone(modes.success_feedback(e, "fr2en"))
+
+    def test_success_feedback_shows_notes_for_en2fr(self):
+        e = self._entry(notes="extremely irregular")
+        out = modes.success_feedback(e, "en2fr")
+        self.assertIn("extremely irregular", out)
+
+    def test_success_feedback_no_notes(self):
+        e = self._entry()
+        self.assertIsNone(modes.success_feedback(e, "en2fr"))
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+### 14.3 Session tests — `tests/test_vocab_session.py`
+
+Covers the retry loop (§6.3), success feedback (§6.4), commands (§8), and progress
+recording. Uses `unittest.mock` to drive stdin, mirroring the verb trainer's session tests.
+
+```python
+# -*- coding: utf-8 -*-
+"""Vocabulary session flow tests (spec §6, §8)."""
+
+import contextlib
+import io
+import unittest
+from unittest import mock
+
+from vocab import main
+from vocab.main import Session
+
+
+class SessionTest(unittest.TestCase):
+    def setUp(self):
+        self.faire = {"id": "faire", "fr": "faire",
+                      "en": ["to do", "to make"], "pos": "verb",
+                      "notes": "extremely irregular"}
+        self.venir = {"id": "venir", "fr": "venir",
+                      "en": ["to come"], "pos": "verb", "notes": None}
+        self.patches = [
+            mock.patch.object(main, "load_config", return_value={
+                "direction": "both", "pos_scope": "all"}),
+            mock.patch.object(main, "save_config", return_value=None),
+            mock.patch.object(main.progress, "load_progress", return_value={}),
+            mock.patch.object(main.progress, "save_progress", return_value=None),
+        ]
+        for p in self.patches:
+            p.start()
+        self.addCleanup(self._stop)
+
+    def _stop(self):
+        for p in reversed(self.patches):
+            p.stop()
+
+    def _run(self, entries, answers):
+        s = Session({"direction": "fr2en", "pos_scope": "all"}, entries)
+        out = io.StringIO()
+        with mock.patch.object(main.consoleio, "input_line", side_effect=answers), \
+                contextlib.redirect_stdout(out):
+            outcome = s.run()
+        return outcome, out.getvalue()
+
+    def test_fr2en_retry_until_correct(self):
+        # "to do" wrong at first ("to read"), then correct; lists all meanings
+        outcome, out = self._run([self.faire], ["to read", "to do"])
+        self.assertEqual(outcome, "quit")
+        self.assertIn("expected: to do / to make", out)
+        self.assertIn("faire -> to do / to make", out)
+        self.assertNotIn("extremely irregular", out)
+
+    def test_en2fr_success_shows_notes(self):
+        # direction en2fr: answer venir correctly, notes must appear
+        s = Session({"direction": "en2fr", "pos_scope": "all"},
+                    [self.venir, self.faire])
+        answers = ["venir", "faire"]  # one per item
+        out = io.StringIO()
+        with mock.patch.object(main.consoleio, "input_line", side_effect=answers), \
+                contextlib.redirect_stdout(out):
+            outcome = s.run()
+        self.assertEqual(outcome, "quit")
+        self.assertIn("extremely irregular", out)
+
+    def test_quit_command(self):
+        outcome, _ = self._run([self.faire], [":quit"])
+        self.assertEqual(outcome, "quit")
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+### 14.4 Running the tests
+
+```
+python -m unittest discover -s tests -p "test_vocab_*.py"
+```
+
+Works identically on Windows (Python 3.6+) and WSL (Python 3.12). All verb-trainer tests
+continue to pass unchanged, since the vocabulary tutor is a separate package.
+
+---
+
+## 15. Design Philosophy
+
+- Tight feedback loops, minimal friction.
+- Type-the-answer, bidirectional drilling.
+- Wrong answers force a retry of the same item.
+- Successful answers teach: all meanings for fr2en, usage notes for en2fr.
+- Clean separation of data, engine, and UI.
+- Deterministic validation of every data rule at load time.
+- Reuse generic plumbing from the verb trainer; never couple the two programs' data.
+- Data files are configurable, not hardcoded: one config file controls every path.

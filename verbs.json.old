@@ -1,0 +1,97 @@
+{
+  "verbs": [
+    { "infinitive": "venir", "translation": "to come", "group": "ir_irregular", "auxiliary": "être",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "viens","tu": "viens","il/elle": "vient","nous": "venons","vous": "venez","ils/elles": "viennent"}}}},
+    { "infinitive": "tenir", "translation": "to hold", "group": "ir_irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "tiens","tu": "tiens","il/elle": "tient","nous": "tenons","vous": "tenez","ils/elles": "tiennent"}}}},
+    { "infinitive": "faire", "translation": "to do / to make", "group": "re_irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "fais","tu": "fais","il/elle": "fait","nous": "faisons","vous": "faites","ils/elles": "font"}}}},
+    { "infinitive": "être", "translation": "to be", "group": "irregular", "auxiliary": "être",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "suis","tu": "es","il/elle": "est","nous": "sommes","vous": "êtes","ils/elles": "sont"}}}},
+    { "infinitive": "avoir", "translation": "to have", "group": "irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "j'": "ai","tu": "as","il/elle": "a","nous": "avons","vous": "avez","ils/elles": "ont"}}}},
+    { "infinitive": "aller", "translation": "to go", "group": "ir_irregular", "auxiliary": "être",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "vais","tu": "vas","il/elle": "va","nous": "allons","vous": "allez","ils/elles": "vont"}}}},
+    { "infinitive": "pouvoir", "translation": "can / to be able to", "group": "irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "peux","tu": "peux","il/elle": "peut","nous": "pouvons","vous": "pouvez","ils/elles": "peuvent"}}}},
+    { "infinitive": "vouloir", "translation": "to want", "group": "irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "veux","tu": "veux","il/elle": "veut","nous": "voulons","vous": "voulez","ils/elles": "veulent"}}}},
+    { "infinitive": "devoir", "translation": "must / to have to", "group": "irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "dois","tu": "dois","il/elle": "doit","nous": "devons","vous": "devez","ils/elles": "doivent"}}}},
+    { "infinitive": "prendre", "translation": "to take", "group": "re_irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "prends","tu": "prends","il/elle": "prend","nous": "prenons","vous": "prenez","ils/elles": "prennent"}}}},
+    { "infinitive": "mettre", "translation": "to put", "group": "re_irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "mets","tu": "mets","il/elle": "met","nous": "mettons","vous": "mettez","ils/elles": "mettent"}}}},
+    { "infinitive": "dire", "translation": "to say / to tell", "group": "re_irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "dis","tu": "dis","il/elle": "dit","nous": "disons","vous": "dites","ils/elles": "disent"}}}},
+    { "infinitive": "voir", "translation": "to see", "group": "ir_irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "vois","tu": "vois","il/elle": "voit","nous": "voyons","vous": "voyez","ils/elles": "voient"}}}},
+    { "infinitive": "boire", "translation": "to drink", "group": "re_irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "bois","tu": "bois","il/elle": "boit","nous": "buvons","vous": "buvez","ils/elles": "boivent"}}}},
+    { "infinitive": "savoir", "translation": "to know (a fact / how to)", "group": "irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "sais","tu": "sais","il/elle": "sait","nous": "savons","vous": "savez","ils/elles": "savent"}}}},
+    { "infinitive": "connaître", "translation": "to know (a person / place)", "group": "re_irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "connais","tu": "connais","il/elle": "connaît","nous": "connaissons","vous": "connaissez","ils/elles": "connaissent"}}}},
+    { "infinitive": "lire", "translation": "to read", "group": "re_irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "lis","tu": "lis","il/elle": "lit","nous": "lisons","vous": "lisez","ils/elles": "lisent"}}}},
+    { "infinitive": "écrire", "translation": "to write", "group": "re_irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "j'": "écris","tu": "écris","il/elle": "écrit","nous": "écrivons","vous": "écrivez","ils/elles": "écrivent"}}}},
+    { "infinitive": "sortir", "translation": "to go out", "group": "ir_irregular", "auxiliary": "être",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "sors","tu": "sors","il/elle": "sort","nous": "sortons","vous": "sortez","ils/elles": "sortent"}}}},
+    { "infinitive": "partir", "translation": "to leave", "group": "ir_irregular", "auxiliary": "être",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "pars","tu": "pars","il/elle": "part","nous": "partons","vous": "partez","ils/elles": "partent"}}}},
+    { "infinitive": "dormir", "translation": "to sleep", "group": "ir_irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "dors","tu": "dors","il/elle": "dort","nous": "dormons","vous": "dormez","ils/elles": "dorment"}}}},
+    { "infinitive": "ouvrir", "translation": "to open", "group": "ir_irregular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "j'": "ouvre","tu": "ouvres","il/elle": "ouvre","nous": "ouvrons","vous": "ouvrez","ils/elles": "ouvrent"}}}},
+    { "infinitive": "parler", "translation": "to speak", "group": "er_regular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "parle","tu": "parles","il/elle": "parle","nous": "parlons","vous": "parlez","ils/elles": "parlent"}}}},
+    { "infinitive": "finir", "translation": "to finish", "group": "ir_regular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "finis","tu": "finis","il/elle": "finit","nous": "finissons","vous": "finissez","ils/elles": "finissent"}}}},
+    { "infinitive": "fermer", "translation": "to close", "group": "er_regular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "ferme","tu": "fermes","il/elle": "ferme","nous": "fermons","vous": "fermez","ils/elles": "ferment"}}}},
+    { "infinitive": "donner", "translation": "to give", "group": "er_regular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "donne","tu": "donnes","il/elle": "donne","nous": "donnons","vous": "donnez","ils/elles": "donnent"}}}},
+    { "infinitive": "trouver", "translation": "to find", "group": "er_regular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "trouve","tu": "trouves","il/elle": "trouve","nous": "trouvons","vous": "trouvez","ils/elles": "trouvent"}}}},
+    { "infinitive": "penser", "translation": "to think", "group": "er_regular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "pense","tu": "penses","il/elle": "pense","nous": "pensons","vous": "pensez","ils/elles": "pensent"}}}},
+    { "infinitive": "attendre", "translation": "to wait", "group": "re_regular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "j'": "attends","tu": "attends","il/elle": "attend","nous": "attendons","vous": "attendez","ils/elles": "attendent"}}}},
+    { "infinitive": "entendre", "translation": "to hear", "group": "re_regular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "j'": "entends","tu": "entends","il/elle": "entend","nous": "entendons","vous": "entendez","ils/elles": "entendent"}}}},
+    { "infinitive": "répondre", "translation": "to answer", "group": "re_regular", "auxiliary": "avoir",
+      "conjugations": { "present": { "label": "présent", "forms": {
+        "je": "réponds","tu": "réponds","il/elle": "répond","nous": "répondons","vous": "répondez","ils/elles": "répondent"}}}}
+  ]
+}

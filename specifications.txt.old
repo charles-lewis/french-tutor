@@ -1,0 +1,286 @@
+# French Verb Trainer — Program Specification (Final)
+
+## Overview
+
+A local Python-based CLI tool for drilling French verb conjugations using a structured JSON dataset. The system emphasizes **precision, repetition, and progressive locking**, with multiple training modes and explicit session flow control.
+
+---
+
+## Core Concepts
+
+### Person Index (Definition)
+
+The **person index** is the fixed positional mapping used to represent grammatical persons in conjugation arrays.
+
+| Index | Pronoun        | Meaning                        |
+|------|----------------|--------------------------------|
+| 0    | je             | I                              |
+| 1    | tu             | you (singular informal)        |
+| 2    | il / elle / on | he / she / one                 |
+| 3    | nous           | we                             |
+| 4    | vous           | you (plural/formal)            |
+| 5    | ils / elles    | they                           |
+
+All conjugation arrays **must follow this exact order**.
+
+---
+
+## JSON Format
+
+### Top-Level Structure
+
+```json
+{
+  "verbs": [Verb]
+}
+Verb Object
+{
+  "infinitive": "venir",
+  "translation": "to come",
+  "group": "ir_irregular",
+  "auxiliary": "être",
+  "tenses": {
+    "present": {
+      "label": "présent",
+      "forms": ["viens", "viens", "vient", "venons", "venez", "viennent"]
+    }
+  }
+}
+Types
+Verb = {
+  infinitive: str,
+  translation: str,
+  group: str,
+  auxiliary: str,
+  tenses: Dict[str, Tense]
+}
+
+Tense = {
+  label: str,
+  forms: List[str]  # length = 6, aligned to person index
+}
+
+Sample verbs.json
+{
+  "verbs": [
+    {
+      "infinitive": "venir",
+      "translation": "to come",
+      "group": "ir_irregular",
+      "auxiliary": "être",
+      "tenses": {
+        "present": {
+          "label": "présent",
+          "forms": [
+            "viens",
+            "viens",
+            "vient",
+            "venons",
+            "venez",
+            "viennent"
+          ]
+        }
+      }
+    }
+  ]
+}
+
+
+
+Training Modes
+1. Recognition Mode
+Prompt:
+venir — présent — nous →
+Expected Input:
+venons
+
+2. Reverse Mode
+Prompt:
+viens →
+Expected Input:
+I come
+(Must be natural English equivalent, not literal word mapping.)
+
+3. Conjugation Mode (Full Drill)
+Default. Prompts for each person individually:
+venir — présent
+
+je →
+tu →
+il/elle →
+nous →
+vous →
+ils/elles →
+User enters each form sequentially.
+
+4. Rapid Recall Mode
+Prompt:
+faire — passé composé — ils →
+Expected Input:
+ont fait
+
+
+5. Mixed Mode
+Randomized rotation between:
+Recognition
+Reverse
+Rapid Recall
+
+Tense Selection
+:tenses present
+:tenses present,imparfait
+:tenses all
+
+Session Flow
+START SESSION
+  ↓
+Load verbs.json
+  ↓
+Select tense(s)
+  ↓
+Apply filters (tenses, verbs)
+  ↓
+Initialize stats
+  ↓
+
+=== LOOP START ===
+  ↓
+Select next prompt
+  ↓
+Display prompt
+  ↓
+Wait for input
+  ↓
+Evaluate response
+
+  IF correct:
+    + success_count
+    + streak
+  ELSE:
+    show correction
+    reset streak
+
+  ↓
+Update weights
+  ↓
+
+IF :quit → END SESSION
+IF :new → RETURN TO TENSE SELECTION
+ELSE → LOOP REPEATS
+=== LOOP END ===
+
+Word Selection Algorithm
+Data per (verb, tense, person_index)
+{
+  success_count: int,
+  failure_count: int,
+  last_seen: timestamp,
+  streak: int
+}
+Weight Function
+weight = (failure_count + 1) * freshness_factor / (streak + 1)
+Behavior
+Errors resurface aggressively
+High-streak items decay in frequency
+Unseen items are prioritized
+Mastered items never fully disappear
+
+Progress Metrics
+Per Item
+Accuracy %
+Current streak
+Longest streak
+Last seen
+Optional response time
+Per Session
+Total prompts
+Correct / incorrect
+Mode distribution
+Weakest verbs
+
+Progress Storage
+File: progress.json
+{
+  "venir|present|0": {
+    "success_count": 5,
+    "failure_count": 2,
+    "streak": 3,
+    "last_seen": 1712345678
+  }
+}
+Key Format
+{infinitive}|{tense}|{person_index}
+
+Inline Commands
+Command
+Function
+:quit
+Exit session
+:skip
+Skip prompt
+:reveal
+Show answer
+:repeat
+Repeat prompt
+:new
+Return to tense selection
+:stats
+Show stats
+
+
+Example Session
+Recognition
+aller — présent — je →
+> vais
+✓
+
+Reverse
+sommes →
+> we are
+✓
+
+Conjugation
+prendre — présent
+
+je → prends ✓
+tu → prends ✓
+il → prend ✓
+nous → prenons ✓
+vous → prenez ✓
+ils → prennent ✓
+
+✓ Full correct
+
+Rapid Recall
+avoir — passé composé — nous →
+> avons eu
+✓ (0.9s)
+
+Exit Conditions
+Session ends when:
+:quit is issued
+
+
+Design Philosophy
+Tight feedback loops
+Minimal friction
+High repetition density
+Explicit control over difficulty
+Clean separation of data and engine
+
+Suggested Python Structure
+/trainer
+  main.py
+  engine.py
+  modes.py
+  progress.py
+  loader.py
+
+/data
+  verbs.json
+  progress.json
+Module Roles
+engine.py → selection algorithm
+modes.py → interaction logic
+progress.py → persistence
+loader.py → validation

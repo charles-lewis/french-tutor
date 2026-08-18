@@ -1,0 +1,1118 @@
+{
+    "venir|present|ils/elles": {
+        "attempts": 109,
+        "correct": 55,
+        "last_seen": "2026-07-28T19:38:57.850737",
+        "error_score": 0.8
+    },
+    "trouver|present|label": {
+        "attempts": 1,
+        "correct": 0,
+        "last_seen": "2026-07-24T04:31:33.935823",
+        "error_score": 1.0
+    },
+    "tenir|present|label": {
+        "attempts": 1,
+        "correct": 0,
+        "last_seen": "2026-07-24T04:32:02.391040",
+        "error_score": 1.0
+    },
+    "penser|present|tu": {
+        "attempts": 6,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:07:08.262742",
+        "error_score": 1.0
+    },
+    "prendre|present|je": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:04:55.754381",
+        "error_score": 0.0
+    },
+    "partir|present|ils/elles": {
+        "attempts": 5,
+        "correct": 5,
+        "last_seen": "2026-07-27T01:12:09.502824",
+        "error_score": 0.0
+    },
+    "parler|present|vous": {
+        "attempts": 3,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:03:32.544324",
+        "error_score": 0.6000000000000001
+    },
+    "écrire|present|ils/elles": {
+        "attempts": 7,
+        "correct": 6,
+        "last_seen": "2026-07-27T01:08:20.400195",
+        "error_score": 0.0
+    },
+    "répondre|present|vous": {
+        "attempts": 5,
+        "correct": 5,
+        "last_seen": "2026-07-27T01:12:29.775892",
+        "error_score": 0.0
+    },
+    "sortir|present|il/elle": {
+        "attempts": 3,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:10:06.028063",
+        "error_score": 0.6000000000000001
+    },
+    "prendre|present|vous": {
+        "attempts": 5,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:05:04.895326",
+        "error_score": 0.20000000000000007
+    },
+    "faire|present|nous": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:11:20.004849",
+        "error_score": 0.0
+    },
+    "dormir|present|nous": {
+        "attempts": 8,
+        "correct": 8,
+        "last_seen": "2026-07-27T01:06:56.192542",
+        "error_score": 0.0
+    },
+    "mettre|present|nous": {
+        "attempts": 2,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:05:30.845328",
+        "error_score": 0.8
+    },
+    "ouvrir|present|il/elle": {
+        "attempts": 7,
+        "correct": 6,
+        "last_seen": "2026-07-27T01:09:53.039756",
+        "error_score": 0.0
+    },
+    "faire|present|je": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:11:13.667790",
+        "error_score": 0.0
+    },
+    "dormir|present|je": {
+        "attempts": 7,
+        "correct": 5,
+        "last_seen": "2026-07-27T01:06:49.177824",
+        "error_score": 0.20000000000000007
+    },
+    "dormir|present|tu": {
+        "attempts": 7,
+        "correct": 7,
+        "last_seen": "2026-07-27T01:06:50.331316",
+        "error_score": 0.0
+    },
+    "dormir|present|il/elle": {
+        "attempts": 7,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:06:51.933381",
+        "error_score": 0.6000000000000001
+    },
+    "dormir|present|vous": {
+        "attempts": 7,
+        "correct": 7,
+        "last_seen": "2026-07-27T01:06:58.966298",
+        "error_score": 0.0
+    },
+    "dormir|present|ils/elles": {
+        "attempts": 7,
+        "correct": 7,
+        "last_seen": "2026-07-27T01:07:01.750342",
+        "error_score": 0.0
+    },
+    "penser|present|je": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:07:04.591070",
+        "error_score": 0.0
+    },
+    "penser|present|il/elle": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:07:12.021906",
+        "error_score": 0.0
+    },
+    "penser|present|nous": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:07:14.966093",
+        "error_score": 0.0
+    },
+    "penser|present|vous": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:07:17.544835",
+        "error_score": 0.0
+    },
+    "penser|present|ils/elles": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:07:20.700311",
+        "error_score": 0.0
+    },
+    "connaître|present|je": {
+        "attempts": 5,
+        "correct": 5,
+        "last_seen": "2026-07-27T01:03:53.388868",
+        "error_score": 0.0
+    },
+    "connaître|present|tu": {
+        "attempts": 5,
+        "correct": 5,
+        "last_seen": "2026-07-27T01:03:57.311998",
+        "error_score": 0.0
+    },
+    "connaître|present|il/elle": {
+        "attempts": 5,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:03:59.712239",
+        "error_score": 1.0
+    },
+    "connaître|present|nous": {
+        "attempts": 5,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:04:11.264113",
+        "error_score": 0.8
+    },
+    "connaître|present|vous": {
+        "attempts": 5,
+        "correct": 5,
+        "last_seen": "2026-07-27T01:04:15.548358",
+        "error_score": 0.0
+    },
+    "connaître|present|ils/elles": {
+        "attempts": 5,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:04:19.794868",
+        "error_score": 0.8
+    },
+    "être|present|je": {
+        "attempts": 4,
+        "correct": 3,
+        "last_seen": "2026-07-28T19:48:19.980867",
+        "error_score": 0.5
+    },
+    "être|present|tu": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:10:21.031387",
+        "error_score": 0.0
+    },
+    "être|present|il/elle": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:10:23.601267",
+        "error_score": 0.0
+    },
+    "être|present|nous": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:10:29.723504",
+        "error_score": 0.0
+    },
+    "être|present|vous": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:10:40.983393",
+        "error_score": 0.0
+    },
+    "être|present|ils/elles": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:10:42.430105",
+        "error_score": 0.0
+    },
+    "ouvrir|present|tu": {
+        "attempts": 6,
+        "correct": 5,
+        "last_seen": "2026-07-27T01:09:51.179355",
+        "error_score": 5.551115123125783e-17
+    },
+    "ouvrir|present|nous": {
+        "attempts": 6,
+        "correct": 5,
+        "last_seen": "2026-07-27T01:09:55.846093",
+        "error_score": 5.551115123125783e-17
+    },
+    "ouvrir|present|vous": {
+        "attempts": 6,
+        "correct": 6,
+        "last_seen": "2026-07-27T01:09:57.755308",
+        "error_score": 0.0
+    },
+    "ouvrir|present|ils/elles": {
+        "attempts": 6,
+        "correct": 6,
+        "last_seen": "2026-07-27T01:09:59.084274",
+        "error_score": 0.0
+    },
+    "ouvrir|present|j'": {
+        "attempts": 6,
+        "correct": 6,
+        "last_seen": "2026-07-27T01:10:00.962679",
+        "error_score": 0.0
+    },
+    "parler|present|je": {
+        "attempts": 2,
+        "correct": 1,
+        "last_seen": "2026-07-25T17:03:21.932269",
+        "error_score": 0.8
+    },
+    "parler|present|tu": {
+        "attempts": 2,
+        "correct": 1,
+        "last_seen": "2026-07-25T17:03:24.474251",
+        "error_score": 0.8
+    },
+    "parler|present|il/elle": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:03:27.217090",
+        "error_score": 0.09999999999999998
+    },
+    "parler|present|nous": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:03:30.160507",
+        "error_score": 0.09999999999999998
+    },
+    "parler|present|ils/elles": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:03:34.189108",
+        "error_score": 0.09999999999999998
+    },
+    "boire|present|je": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-25T17:20:48.220776",
+        "error_score": 0.0
+    },
+    "boire|present|tu": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-25T17:20:49.350732",
+        "error_score": 0.0
+    },
+    "boire|present|il/elle": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-25T17:20:50.601576",
+        "error_score": 0.0
+    },
+    "boire|present|nous": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-25T17:20:52.685432",
+        "error_score": 0.0
+    },
+    "boire|present|vous": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-25T17:20:54.310126",
+        "error_score": 0.0
+    },
+    "boire|present|ils/elles": {
+        "attempts": 4,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:21:00.628990",
+        "error_score": 0.6000000000000001
+    },
+    "faire|present|tu": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:11:15.166565",
+        "error_score": 0.0
+    },
+    "faire|present|il/elle": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:11:16.613803",
+        "error_score": 0.0
+    },
+    "faire|present|vous": {
+        "attempts": 3,
+        "correct": 0,
+        "last_seen": "2026-07-27T01:11:22.318756",
+        "error_score": 1.0
+    },
+    "faire|present|ils/elles": {
+        "attempts": 3,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:11:37.303563",
+        "error_score": 0.6
+    },
+    "savoir|present|je": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:07:26.085997",
+        "error_score": 0.0
+    },
+    "savoir|present|tu": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:07:32.270608",
+        "error_score": 0.0
+    },
+    "savoir|present|il/elle": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:07:34.459117",
+        "error_score": 0.0
+    },
+    "savoir|present|nous": {
+        "attempts": 4,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:07:38.383408",
+        "error_score": 0.5
+    },
+    "savoir|present|vous": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:07:43.701216",
+        "error_score": 0.0
+    },
+    "savoir|present|ils/elles": {
+        "attempts": 4,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:07:46.853421",
+        "error_score": 0.4000000000000001
+    },
+    "pouvoir|present|je": {
+        "attempts": 6,
+        "correct": 4,
+        "last_seen": "2026-07-28T19:46:33.154794",
+        "error_score": 0.20000000000000007
+    },
+    "pouvoir|present|tu": {
+        "attempts": 5,
+        "correct": 5,
+        "last_seen": "2026-07-28T19:46:34.590304",
+        "error_score": 0.0
+    },
+    "pouvoir|present|il/elle": {
+        "attempts": 5,
+        "correct": 4,
+        "last_seen": "2026-07-28T19:46:37.596878",
+        "error_score": 0.20000000000000007
+    },
+    "pouvoir|present|nous": {
+        "attempts": 5,
+        "correct": 3,
+        "last_seen": "2026-07-28T19:46:41.558167",
+        "error_score": 0.4000000000000001
+    },
+    "pouvoir|present|vous": {
+        "attempts": 5,
+        "correct": 4,
+        "last_seen": "2026-07-28T19:46:43.553176",
+        "error_score": 0.5
+    },
+    "pouvoir|present|ils/elles": {
+        "attempts": 5,
+        "correct": 3,
+        "last_seen": "2026-07-28T19:47:45.092554",
+        "error_score": 0.4000000000000001
+    },
+    "prendre|present|tu": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:04:57.241368",
+        "error_score": 0.0
+    },
+    "prendre|present|il/elle": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:04:59.795283",
+        "error_score": 0.0
+    },
+    "prendre|present|nous": {
+        "attempts": 3,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:05:03.367162",
+        "error_score": 0.6000000000000001
+    },
+    "prendre|present|ils/elles": {
+        "attempts": 3,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:05:07.017844",
+        "error_score": 1.0
+    },
+    "fermer|present|je": {
+        "attempts": 2,
+        "correct": 1,
+        "last_seen": "2026-07-25T17:06:32.816273",
+        "error_score": 0.8
+    },
+    "fermer|present|tu": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:06:36.589100",
+        "error_score": 0.09999999999999998
+    },
+    "fermer|present|il/elle": {
+        "attempts": 2,
+        "correct": 1,
+        "last_seen": "2026-07-25T17:06:39.595831",
+        "error_score": 0.8
+    },
+    "fermer|present|nous": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:06:43.555039",
+        "error_score": 0.09999999999999998
+    },
+    "fermer|present|vous": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:06:45.799699",
+        "error_score": 0.09999999999999998
+    },
+    "fermer|present|ils/elles": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:06:47.860946",
+        "error_score": 0.09999999999999998
+    },
+    "répondre|present|je": {
+        "attempts": 6,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:20:32.194777",
+        "error_score": 1.0
+    },
+    "répondre|present|tu": {
+        "attempts": 6,
+        "correct": 5,
+        "last_seen": "2026-07-27T01:20:32.433992",
+        "error_score": 0.5
+    },
+    "répondre|present|il/elle": {
+        "attempts": 5,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:12:23.052725",
+        "error_score": 0.20000000000000007
+    },
+    "finir|present|je": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-24T17:09:38.644558",
+        "error_score": 0.3
+    },
+    "finir|present|tu": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-24T17:09:40.800861",
+        "error_score": 0.3
+    },
+    "finir|present|il/elle": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-24T17:09:43.159141",
+        "error_score": 0.3
+    },
+    "finir|present|nous": {
+        "attempts": 1,
+        "correct": 0,
+        "last_seen": "2026-07-24T17:09:46.064234",
+        "error_score": 1.0
+    },
+    "aller|present|je": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:21:39.223994",
+        "error_score": 0.09999999999999998
+    },
+    "sortir|present|je": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:10:02.994890",
+        "error_score": 0.0
+    },
+    "dire|present|je": {
+        "attempts": 4,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:12:56.901010",
+        "error_score": 0.4000000000000001
+    },
+    "dire|present|tu": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:12:57.801503",
+        "error_score": 0.0
+    },
+    "dire|present|il/elle": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:12:59.685765",
+        "error_score": 0.0
+    },
+    "dire|present|nous": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:13:01.751234",
+        "error_score": 0.0
+    },
+    "dire|present|vous": {
+        "attempts": 4,
+        "correct": 0,
+        "last_seen": "2026-07-27T01:13:03.317046",
+        "error_score": 1.0
+    },
+    "dire|present|ils/elles": {
+        "attempts": 3,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:20:28.510651",
+        "error_score": 0.6
+    },
+    "tenir|present|je": {
+        "attempts": 3,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:10:50.541511",
+        "error_score": 1.0
+    },
+    "tenir|present|tu": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:10:53.949874",
+        "error_score": 0.0
+    },
+    "tenir|present|il/elle": {
+        "attempts": 3,
+        "correct": 0,
+        "last_seen": "2026-07-27T01:10:55.268758",
+        "error_score": 1.0
+    },
+    "tenir|present|nous": {
+        "attempts": 3,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:11:03.424156",
+        "error_score": 0.6000000000000001
+    },
+    "tenir|present|vous": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:11:04.835064",
+        "error_score": 0.0
+    },
+    "tenir|present|ils/elles": {
+        "attempts": 3,
+        "correct": 0,
+        "last_seen": "2026-07-27T01:11:06.870338",
+        "error_score": 1.0
+    },
+    "donner|present|je": {
+        "attempts": 3,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:08:29.837415",
+        "error_score": 0.8
+    },
+    "répondre|present|nous": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:12:27.389352",
+        "error_score": 0.0
+    },
+    "répondre|present|ils/elles": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:12:35.592796",
+        "error_score": 0.0
+    },
+    "trouver|present|je": {
+        "attempts": 2,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:05:44.576456",
+        "error_score": 0.8
+    },
+    "trouver|present|tu": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:05:46.989076",
+        "error_score": 0.09999999999999998
+    },
+    "trouver|present|il/elle": {
+        "attempts": 2,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:05:48.511296",
+        "error_score": 0.8
+    },
+    "trouver|present|nous": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:05:52.065307",
+        "error_score": 0.09999999999999998
+    },
+    "trouver|present|vous": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:05:53.800117",
+        "error_score": 0.09999999999999998
+    },
+    "trouver|present|ils/elles": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:05:55.590208",
+        "error_score": 0.09999999999999998
+    },
+    "avoir|present|tu": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T16:18:29.394290",
+        "error_score": 0.3
+    },
+    "avoir|present|il/elle": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T16:18:32.263185",
+        "error_score": 0.3
+    },
+    "avoir|present|nous": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T16:18:34.717889",
+        "error_score": 0.3
+    },
+    "avoir|present|vous": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T16:18:39.223523",
+        "error_score": 0.3
+    },
+    "avoir|present|ils/elles": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T16:18:45.285024",
+        "error_score": 0.3
+    },
+    "avoir|present|j'": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T16:18:49.207325",
+        "error_score": 0.3
+    },
+    "voir|present|je": {
+        "attempts": 7,
+        "correct": 7,
+        "last_seen": "2026-07-27T01:11:47.675644",
+        "error_score": 0.0
+    },
+    "voir|present|tu": {
+        "attempts": 7,
+        "correct": 7,
+        "last_seen": "2026-07-27T01:11:48.964122",
+        "error_score": 0.0
+    },
+    "voir|present|il/elle": {
+        "attempts": 7,
+        "correct": 7,
+        "last_seen": "2026-07-27T01:11:49.787445",
+        "error_score": 0.0
+    },
+    "voir|present|nous": {
+        "attempts": 7,
+        "correct": 7,
+        "last_seen": "2026-07-27T01:11:54.032206",
+        "error_score": 0.0
+    },
+    "voir|present|vous": {
+        "attempts": 7,
+        "correct": 7,
+        "last_seen": "2026-07-27T01:11:55.950956",
+        "error_score": 0.0
+    },
+    "voir|present|ils/elles": {
+        "attempts": 7,
+        "correct": 7,
+        "last_seen": "2026-07-27T01:11:57.739684",
+        "error_score": 0.0
+    },
+    "entendre|present|tu": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-28T19:47:54.762693",
+        "error_score": 0.0
+    },
+    "entendre|present|il/elle": {
+        "attempts": 4,
+        "correct": 3,
+        "last_seen": "2026-07-28T19:47:59.221362",
+        "error_score": 0.4000000000000001
+    },
+    "entendre|present|nous": {
+        "attempts": 4,
+        "correct": 3,
+        "last_seen": "2026-07-28T19:48:05.796262",
+        "error_score": 0.5
+    },
+    "entendre|present|vous": {
+        "attempts": 4,
+        "correct": 3,
+        "last_seen": "2026-07-28T19:48:10.318882",
+        "error_score": 0.4000000000000001
+    },
+    "entendre|present|ils/elles": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-28T19:48:13.303392",
+        "error_score": 0.0
+    },
+    "entendre|present|j'": {
+        "attempts": 4,
+        "correct": 2,
+        "last_seen": "2026-07-28T19:48:16.848504",
+        "error_score": 0.8
+    },
+    "devoir|present|je": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:22:50.564633",
+        "error_score": 0.09999999999999998
+    },
+    "devoir|present|tu": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:22:52.303894",
+        "error_score": 0.09999999999999998
+    },
+    "devoir|present|il/elle": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:22:53.554416",
+        "error_score": 0.09999999999999998
+    },
+    "devoir|present|nous": {
+        "attempts": 2,
+        "correct": 1,
+        "last_seen": "2026-07-25T17:22:57.029608",
+        "error_score": 0.8
+    },
+    "devoir|present|vous": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-25T17:22:59.166687",
+        "error_score": 0.09999999999999998
+    },
+    "devoir|present|ils/elles": {
+        "attempts": 2,
+        "correct": 0,
+        "last_seen": "2026-07-25T17:23:00.883889",
+        "error_score": 1.0
+    },
+    "écrire|present|tu": {
+        "attempts": 6,
+        "correct": 6,
+        "last_seen": "2026-07-27T01:08:06.136203",
+        "error_score": 0.0
+    },
+    "écrire|present|il/elle": {
+        "attempts": 6,
+        "correct": 6,
+        "last_seen": "2026-07-27T01:08:10.378648",
+        "error_score": 0.0
+    },
+    "écrire|present|nous": {
+        "attempts": 6,
+        "correct": 6,
+        "last_seen": "2026-07-27T01:08:14.889491",
+        "error_score": 0.0
+    },
+    "écrire|present|vous": {
+        "attempts": 6,
+        "correct": 6,
+        "last_seen": "2026-07-27T01:08:17.484831",
+        "error_score": 0.0
+    },
+    "écrire|present|j'": {
+        "attempts": 6,
+        "correct": 6,
+        "last_seen": "2026-07-27T01:08:23.548574",
+        "error_score": 0.0
+    },
+    "venir|present|je": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T16:38:35.100897",
+        "error_score": 0.3
+    },
+    "venir|present|tu": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T16:38:36.889719",
+        "error_score": 0.3
+    },
+    "venir|present|il/elle": {
+        "attempts": 1,
+        "correct": 0,
+        "last_seen": "2026-07-25T16:38:38.377869",
+        "error_score": 1.0
+    },
+    "venir|present|nous": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T16:38:48.185511",
+        "error_score": 0.3
+    },
+    "venir|present|vous": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T16:38:50.773463",
+        "error_score": 0.3
+    },
+    "vouloir|present|je": {
+        "attempts": 7,
+        "correct": 6,
+        "last_seen": "2026-07-28T19:45:55.836366",
+        "error_score": 0.0
+    },
+    "vouloir|present|tu": {
+        "attempts": 7,
+        "correct": 7,
+        "last_seen": "2026-07-28T19:45:57.214885",
+        "error_score": 0.0
+    },
+    "vouloir|present|il/elle": {
+        "attempts": 7,
+        "correct": 6,
+        "last_seen": "2026-07-28T19:45:58.796235",
+        "error_score": 0.0
+    },
+    "vouloir|present|nous": {
+        "attempts": 7,
+        "correct": 6,
+        "last_seen": "2026-07-28T19:46:01.886120",
+        "error_score": 0.0
+    },
+    "vouloir|present|vous": {
+        "attempts": 7,
+        "correct": 7,
+        "last_seen": "2026-07-28T19:46:26.900687",
+        "error_score": 0.0
+    },
+    "vouloir|present|ils/elles": {
+        "attempts": 7,
+        "correct": 3,
+        "last_seen": "2026-07-28T19:46:30.042762",
+        "error_score": 0.8
+    },
+    "partir|present|je": {
+        "attempts": 4,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:12:00.739790",
+        "error_score": 0.6000000000000001
+    },
+    "partir|present|tu": {
+        "attempts": 4,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:12:01.914763",
+        "error_score": 0.4000000000000001
+    },
+    "partir|present|il/elle": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:12:03.278081",
+        "error_score": 0.0
+    },
+    "partir|present|nous": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:12:06.136933",
+        "error_score": 0.0
+    },
+    "partir|present|vous": {
+        "attempts": 4,
+        "correct": 4,
+        "last_seen": "2026-07-27T01:12:08.033427",
+        "error_score": 0.0
+    },
+    "donner|present|tu": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:08:35.281157",
+        "error_score": 0.09999999999999998
+    },
+    "donner|present|il/elle": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:08:37.695325",
+        "error_score": 0.09999999999999998
+    },
+    "donner|present|nous": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:08:40.642010",
+        "error_score": 0.09999999999999998
+    },
+    "donner|present|vous": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:08:42.320306",
+        "error_score": 0.09999999999999998
+    },
+    "donner|present|ils/elles": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:08:43.770117",
+        "error_score": 0.09999999999999998
+    },
+    "attendre|present|tu": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:12:41.014794",
+        "error_score": 0.0
+    },
+    "attendre|present|il/elle": {
+        "attempts": 3,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:12:42.869106",
+        "error_score": 0.6000000000000001
+    },
+    "attendre|present|nous": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:12:45.488793",
+        "error_score": 0.0
+    },
+    "attendre|present|vous": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:12:48.776164",
+        "error_score": 0.0
+    },
+    "attendre|present|ils/elles": {
+        "attempts": 3,
+        "correct": 3,
+        "last_seen": "2026-07-27T01:12:51.753913",
+        "error_score": 0.0
+    },
+    "attendre|present|j'": {
+        "attempts": 3,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:12:54.909231",
+        "error_score": 0.6000000000000001
+    },
+    "aller|present|tu": {
+        "attempts": 1,
+        "correct": 0,
+        "last_seen": "2026-07-25T17:21:41.217930",
+        "error_score": 1.0
+    },
+    "aller|present|il/elle": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T17:21:49.019641",
+        "error_score": 0.3
+    },
+    "aller|present|nous": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T17:21:53.462100",
+        "error_score": 0.3
+    },
+    "aller|present|vous": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-25T17:21:56.162828",
+        "error_score": 0.3
+    },
+    "aller|present|ils/elles": {
+        "attempts": 1,
+        "correct": 0,
+        "last_seen": "2026-07-25T17:22:00.149368",
+        "error_score": 1.0
+    },
+    "mettre|present|je": {
+        "attempts": 1,
+        "correct": 0,
+        "last_seen": "2026-07-27T01:05:13.541622",
+        "error_score": 1.0
+    },
+    "mettre|present|tu": {
+        "attempts": 1,
+        "correct": 0,
+        "last_seen": "2026-07-27T01:05:20.011275",
+        "error_score": 1.0
+    },
+    "mettre|present|il/elle": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:05:23.827320",
+        "error_score": 0.3
+    },
+    "mettre|present|vous": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:05:35.100553",
+        "error_score": 0.3
+    },
+    "mettre|present|ils/elles": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:05:40.598091",
+        "error_score": 0.3
+    },
+    "sortir|present|tu": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:10:05.316966",
+        "error_score": 0.09999999999999998
+    },
+    "sortir|present|nous": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:10:09.828846",
+        "error_score": 0.09999999999999998
+    },
+    "sortir|present|vous": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:10:11.006848",
+        "error_score": 0.09999999999999998
+    },
+    "sortir|present|ils/elles": {
+        "attempts": 2,
+        "correct": 2,
+        "last_seen": "2026-07-27T01:10:14.250297",
+        "error_score": 0.09999999999999998
+    },
+    "lire|present|je": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:09:20.440515",
+        "error_score": 0.3
+    },
+    "lire|present|tu": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:09:21.268443",
+        "error_score": 0.3
+    },
+    "lire|present|il/elle": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:09:22.852728",
+        "error_score": 0.3
+    },
+    "lire|present|nous": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:09:25.161525",
+        "error_score": 0.3
+    },
+    "lire|present|vous": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:09:26.684777",
+        "error_score": 0.3
+    },
+    "lire|present|ils/elles": {
+        "attempts": 1,
+        "correct": 1,
+        "last_seen": "2026-07-27T01:09:28.705842",
+        "error_score": 0.3
+    }
+}

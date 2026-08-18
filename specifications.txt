@@ -1,0 +1,504 @@
+# French Verb Trainer — Program Specification
+
+Version: 2.0 (rewritten)
+
+## 1. Overview
+
+A local Python CLI tool for drilling French verb conjugations. The learner types the
+conjugated form for a given (verb, tense, person); the trainer scores the answer, tracks
+long-term progress, and schedules items so errors resurface and mastered items fade.
+
+The system is built around a single core activity — **full conjugation drills** — with
+**elision-aware prompting**, **per-tense isolation**, **weighted spaced repetition**,
+**past-tense auxiliary awareness**, and **session reporting**.
+
+---
+
+## 2. Goals and Non-Goals
+
+### Goals
+- High repetition density with tight feedback loops.
+- Type-the-French-form training (French → output), not translation exercises.
+- Explicit control: drill one tense at a time, or a chosen set.
+- Data separated cleanly from engine; every format rule is machine-checkable.
+- Long-term progress that makes mistakes resurface automatically.
+
+### Non-Goals (explicitly out of scope for v2.0)
+- Recognition / reverse / rapid-recall / mixed modes from v1.0.
+- English↔French translation drilling.
+- GUI, web front-end, or audio.
+- Configurable accent leniency toggles (accent strictness is fixed; see §7).
+
+---
+
+## 3. Core Concepts
+
+### 3.1 Person Index
+
+The **person index** is the fixed positional mapping used in all conjugation arrays.
+
+| Index | Pronoun        | Meaning                     |
+|-------|----------------|-----------------------------|
+| 0     | je / j'        | I                           |
+| 1     | tu             | you (singular informal)     |
+| 2     | il / elle / on | he / she / one              |
+| 3     | nous           | we                          |
+| 4     | vous           | you (plural / formal)       |
+| 5     | ils / elles    | they                        |
+
+Every `forms` array **must have exactly 6 entries**, position-aligned to this table.
+The je / j' distinction (elision) is a *display-time* decision — see §3.2 — and is never
+baked into the data.
+
+### 3.2 Elision Rule
+
+When prompting person index 0, the engine displays **`j'`** instead of **`je`** if the
+correct answer begins with a vowel or a silent *h* (or a vowel-like accented letter:
+`a e i o u à é è ê ë î ï ô ù û â`); otherwise it displays `je`.
+
+```
+avoir — présent — j'  →   ai          (j'ai)
+venir — présent — je  →   viens       (je viens)
+aller — présent — je  →   vais        (je vais)
+```
+
+The learner **always enters the bare form** (`ai`, `viens`, `vais`), never the pronoun.
+This keeps elision a prompt concern and avoids ambiguity in scoring.
+
+---
+
+## 4. Data Format — verbs.json
+
+### 4.1 Top-level structure
+
+```json
+{
+  "verbs": [Verb]
+}
+```
+
+### 4.2 Verb object
+
+```json
+{
+  "infinitive": "venir",
+  "translation": "to come",
+  "group": "ir_irregular",
+  "auxiliary": "être",
+  "tenses": {
+    "present": {
+      "label": "présent",
+      "type": "simple",
+      "forms": ["viens", "viens", "vient", "venons", "venez", "viennent"]
+    }
+  }
+}
+```
+
+(Abbreviated for clarity — a complete verb provides all six tenses in §5.1.)
+
+### 4.3 Types
+
+```
+Verb = {
+  infinitive: str,
+  translation: str,        # natural English, not literal word mapping
+  group: str,              # e.g. "er_regular", "ir_irregular", "irregular"
+  auxiliary: "être" | "avoir",
+  tenses: Dict[str, Tense]
+}
+
+Tense = {
+  label: str,
+  type: "simple" | "compound" | "periphrastic",
+  forms: List[str],             # length = 6, aligned to person index (§3.1)
+  feminine: List[str] | null    # optional; compound tenses of être-verbs only (§5.5)
+}
+```
+
+### 4.4 Validation rules (loader must enforce)
+
+1. `infinitive` is a non-empty, unique string.
+2. `auxiliary` is exactly `"être"` or `"avoir"`.
+3. Every tense has `forms` of **exactly 6 non-empty strings**.
+4. Every `group` value is one of: `er_regular`, `re_regular`, `ir_regular`,
+   `re_irregular`, `ir_irregular`, `irregular`.
+5. No two verbs share an `infinitive`; no two tenses share a key within a verb.
+6. Every verb **must** provide all six required tenses from the catalog (§5.1), and
+   each tense's `type` must match the catalog.
+7. For a verb with `auxiliary: "être"`, every compound tense **must** provide `feminine`
+   (6 non-empty entries). For `auxiliary: "avoir"`, `feminine` must be absent. `feminine`
+   is forbidden on `simple` and `periphrastic` tenses (§5.5).
+
+### 4.5 Verb groups
+
+The `group` field is a **curator-assigned classification**; the loader only verifies that
+the value is one of the six below. The groups describe the verb's infinitive ending and
+its regularity pattern:
+
+| Group          | Pattern                                                                 | Examples                         |
+|----------------|-------------------------------------------------------------------------|----------------------------------|
+| `er_regular`   | Regular `-er` verb: stem (infinitive minus `-er`) + `e, es, e, ons, ez, ent`. | parler, donner, penser, trouver |
+| `ir_regular`   | Regular `-ir` verb: stem (infinitive minus `-ir`) + `is, is, it, issons, issez, issent`. | finir                  |
+| `re_regular`   | Regular `-re` verb: stem (infinitive minus `-re`) + `s, s, –, ons, ez, ent`. | répondre, attendre, entendre   |
+| `ir_irregular` | `-ir` (or `-ir`-pattern) verb with stem changes in one or more persons.   | venir, sortir, partir, dormir, ouvrir, aller |
+| `re_irregular` | `-re` verb with stem changes or irregular endings.                        | faire, prendre, mettre, dire, boire, connaître, lire, écrire |
+| `irregular`    | Highly irregular verbs that follow no pattern family.                     | être, avoir, pouvoir, vouloir, devoir, savoir |
+
+Notes:
+- The classification is by *infinitive ending + stem behavior*, not by meaning; e.g.
+  *aller* (ending `-er` but irregular) is grouped under `ir_irregular`.
+- The loader does **not** derive the group from the forms — the data is the source of
+  truth — but validation rule 4 guarantees the value is always one of the six.
+
+---
+
+## 5. Tenses
+
+### 5.1 Supported tenses (catalog)
+
+Every verb in `verbs.json` **must** provide all six tenses below. The key is the data
+key; `label` is the display name; `type` classifies the construction (§5.2).
+
+| Key             | Label          | Type          | Example — aller                        |
+|-----------------|----------------|---------------|----------------------------------------|
+| `present`       | présent        | simple        | vais, vas, va, allons, allez, vont     |
+| `imparfait`     | imparfait      | simple        | allais, allais, allait, allions, alliez, allaient |
+| `futur_simple`  | futur simple   | simple        | irai, iras, ira, irons, irez, iront    |
+| `futur_proche`  | futur proche   | periphrastic  | vais aller, vas aller, va aller, allons aller, allez aller, vont aller |
+| `conditionnel`  | conditionnel   | simple        | irais, irais, irait, irions, iriez, iraient |
+| `passé_composé` | passé composé  | compound      | suis allé, es allé, est allé, sommes allés, êtes allés, sont allés |
+
+### 5.2 Tense types
+
+- **`simple`** — one conjugated form per person: *présent*, *imparfait*,
+  *futur simple*, *conditionnel*.
+- **`compound`** — conjugated auxiliary (`être`/`avoir`) + past participle:
+  *passé composé*.
+- **`periphrastic`** — present-tense `aller` + infinitive: *futur proche*.
+
+### 5.3 Storage of compound and periphrastic tenses
+
+Compound and periphrastic `forms` **store the complete inflected form**, auxiliary
+included:
+
+```json
+"passé_composé": {
+  "label": "passé composé",
+  "type": "compound",
+  "forms": ["suis allé", "es allé", "est allé", "sommes allés", "êtes allés", "sont allés"],
+  "feminine": ["suis allée", "es allée", "est allée", "sommes allées", "êtes allées", "sont allées"]
+},
+"futur_proche": {
+  "label": "futur proche",
+  "type": "periphrastic",
+  "forms": ["vais venir", "vas venir", "va venir", "allons venir", "allez venir", "vont venir"]
+}
+```
+
+Loader rules (first word of each form must match):
+
+- **compound** — the person-conjugated auxiliary dictated by the verb's `auxiliary`
+  field: `être` → *suis / es / est / sommes / êtes / sont*; `avoir` →
+  *ai / as / a / avons / avez / ont*.
+- **periphrastic** — the present of `aller`: *vais / vas / va / allons / allez / vont*.
+
+These rules make auxiliary correctness machine-checkable.
+
+### 5.4 Purpose of the auxiliary field
+
+- Data validation (§5.3).
+- Grouping in stats: "weakest être-verbs" vs "weakest avoir-verbs".
+- Scoping drills to a single auxiliary (e.g. drill only être-verbs in passé composé).
+
+### 5.5 Agreement variants (feminine)
+
+`forms` is the **canonical masculine** conjugation. For compound tenses of être-verbs,
+an optional **`feminine`** array stores the subject-agreement variant — each entry is
+the full inflected form with the participle agreeing in gender (and number for
+plural persons):
+
+```json
+"passé_composé": {
+  "label": "passé composé",
+  "type": "compound",
+  "forms":     ["suis venu", "es venu", "est venu", "sommes venus", "êtes venus", "sont venus"],
+  "feminine":  ["suis venue", "es venue", "est venue", "sommes venues", "êtes venues", "sont venues"]
+}
+```
+
+Rules:
+- `feminine` is **required** for compound tenses of `auxiliary: "être"` verbs, and
+  **forbidden** elsewhere (avoir-verb compounds do not agree with the subject; simple and
+  periphrastic tenses have no participle to agree).
+- If present, `feminine` has exactly 6 entries aligned to the person index, and its
+  first words obey the same auxiliary rule as `forms`.
+- The scheduler treats masculine and feminine as the **same item** (same progress key);
+  prompting always randomizes between the two variants 50/50 for être-verb compounds (§6.4).
+
+---
+
+## 6. Training
+
+### 6.1 Session setup
+
+On session start the learner selects:
+
+1. **Tense scope** — one tense, an ordered list, or `all`.
+
+Every verb in the dataset is always in scope; there is no verb filter.
+
+Selections persist between sessions so re-entry is one keystroke.
+
+### 6.2 Full Conjugation Drill (default and only mode)
+
+For each selected (verb, tense):
+
+- Present all six persons sequentially, prompting for each form.
+- Person index 0 uses the elision rule (§3.2) for its pronoun label.
+- The prompt header shows the verb with its English translation, e.g.
+  `prendre (to take) — présent`.
+- The drill moves to the next verb/tense pair after all six persons are answered
+  (a partial drill is resumed later via the scheduler, never re-prompted from scratch).
+- When all six persons are answered correctly, the drill prints a positive
+  confirmation (e.g. `[OK] Full correct 6/6 - prendre (to take) - présent`).
+
+Example:
+
+```
+prendre — présent
+
+je     → prends   ✓
+tu     → prends   ✓
+il/elle → prend   ✓
+nous   → prenons  ✓
+vous   → prenez   ✓
+ils/elles → prennent ✓
+
+✓ Full correct
+```
+
+### 6.3 Tense isolation
+
+`:tenses` selects which tense(s) the session drills. Drilling a single tense
+independently is a first-class flow — the scheduler operates on the selected scope only,
+so `imparfait` can be drilled alone without present-tense items interleaving.
+
+```
+:tenses present
+:tenses present,imparfait
+:tenses conditionnel
+:tenses futur_proche,passé_composé
+:tenses all
+```
+
+### 6.4 Gender
+
+Gender scope is **fixed to `both`** — no user selection, no `:gender` command.
+For compound tenses of être-verbs, every prompt randomly draws a variant (50/50)
+and is scored against the matching entry in `forms` or `feminine`.
+
+Pronouns display as `elle` / `elles` when a feminine variant is prompted for person
+index 2 / 5; `je`, `tu`, `nous`, `vous` display identically either way — the expected
+answer still agrees with the active gender.
+
+---
+
+## 7. Answer Evaluation
+
+- Answers are compared case-insensitively after trimming surrounding whitespace.
+- **Accent strictness is fixed ON**: `ecrit` is wrong for *écrit*; `ecris` is wrong for
+  *écris*. The correction shown after a wrong answer highlights the expected accented
+  spelling.
+- Elision variants are never part of the expected answer (§3.2).
+- Optional per-answer response time is recorded (see §9).
+
+---
+
+## 8. Weighted Spaced-Repetition Scheduling
+
+### 8.1 Item
+
+An **item** is one `(infinitive, tense_key, person_index)` triple — 6 items per
+verb/tense. Scheduler state per item:
+
+```
+ItemState = {
+  success_count: int,
+  failure_count: int,
+  streak: int,
+  longest_streak: int,
+  last_seen: timestamp,        # ISO 8601
+  last_result: "correct" | "incorrect" | null,
+  avg_response_time: float | null   # seconds
+}
+```
+
+### 8.2 Weight function
+
+```
+age_hours      = (now - last_seen) / 3600
+freshness      = 1 + (age_hours / 24) ** 0.6        # unseen-for-long items surge
+recency_boost  = 6.0   if last_result == "incorrect"  else 1.0
+noise          = random.uniform(0.5, 1.5)
+
+weight = (failure_count + 1) * freshness * recency_boost * noise / (streak + 1)
+```
+
+Unseen items (no `last_seen`) get a default `weight` of `10 * noise` so brand-new
+material appears promptly.
+
+### 8.3 Selection
+
+- Next item is drawn by **weighted random sampling** across the active scope (§6.1).
+- The function above yields the intended behaviors:
+  - Recent errors resurface aggressively (`recency_boost` + `failure_count`).
+  - High-streak items decay in frequency (`/ (streak + 1)`).
+  - Long-unseen items are prioritized (`freshness`).
+  - `noise` prevents a predictable rotation.
+  - The `+1` terms guarantee **no item ever reaches weight 0** — mastered items fade
+    but never fully disappear.
+- After a drill completes (all 6 persons), the 6 item states update together; the next
+  draw may pick any item across verbs/tenses in scope.
+
+---
+
+## 9. Stats and Session Reports
+
+### 9.1 Per-item metrics (live, via `:stats`)
+
+- Accuracy % = `success_count / (success_count + failure_count)`.
+- Current streak and longest streak.
+- Last seen.
+- Average response time (if recorded).
+
+### 9.2 Session report (shown at `:quit` and on `:stats`)
+
+- Total prompts, correct, incorrect.
+- Accuracy % for the session.
+- Time elapsed and average response time.
+- Distribution by tense and by verb.
+- **Weakest verbs** — verbs whose items have the lowest accuracy in the selected scope
+  (bottom 5 by accuracy, ties broken by recency of errors).
+
+---
+
+## 10. Progress Storage — progress.json
+
+```json
+{
+  "venir|present|0": {
+    "success_count": 5,
+    "failure_count": 2,
+    "streak": 3,
+    "longest_streak": 4,
+    "last_seen": "2026-08-09T12:00:00.000000",
+    "last_result": "correct",
+    "avg_response_time": 1.4
+  }
+}
+```
+
+Key format:
+
+```
+{infinitive}|{tense_key}|{person_index}
+```
+
+Rules:
+- Keys not present are treated as unseen items (§8.2).
+- On every answered prompt the matching item is updated and the file rewritten
+  atomically (write temp + rename) so an interrupted session never corrupts progress.
+
+---
+
+## 11. Inline Commands
+
+| Command    | Function                                   |
+|------------|--------------------------------------------|
+| `:help`    | List all commands.                         |
+| `:quit`    | Show session report, save progress, exit.  |
+| `:skip`    | Skip the current prompt (counted as incorrect, no reveal). |
+| `:reveal`  | Show the correct answer, count as incorrect. |
+| `:repeat`  | Restart the current verb drill from the first person (no score change). |
+| `:new`     | Return to session setup (§6.1).            |
+| `:tenses`  | Change tense scope mid-session.             |
+| `:stats`   | Show per-item metrics and running session report. |
+
+---
+
+## 12. Session Flow
+
+```
+START SESSION
+  │
+  ▼
+Load + validate verbs.json
+  │
+  ▼
+Session setup: tense scope (persisted)
+  │
+  ▼
+Load progress.json
+  │
+  ▼
+════════ LOOP ════════
+  │
+  ▼
+Pick next item (weighted sampling over scope)
+  │
+  ▼
+Prompt (elision-aware pronoun) → wait for input
+  │
+  ▼
+Evaluate answer (§7)
+
+  correct → +success_count, +streak, last_result=correct
+  wrong   → show correction, reset streak, last_result=incorrect
+
+  │
+  ▼
+Update item state (§8.1) → save progress.json (atomic)
+  │
+  ▼
+COMMAND? :quit → report + exit
+         :new   → back to session setup
+         :tenses → change scope, continue loop
+         :skip / :reveal / :repeat / :stats → handle, continue loop
+         else → continue loop
+════════ LOOP END ════════
+```
+
+---
+
+## 13. Project Structure
+
+```
+french-tutor/
+  trainer/
+    main.py        # CLI entry, session loop, command dispatch
+    engine.py      # weighted scheduler, item selection
+    modes.py       # full conjugation drill, elision display
+    progress.py    # load/save/update progress.json (atomic writes)
+    loader.py      # verbs.json load + validation (§4.4, §5.2)
+  data/
+    verbs.json
+    progress.json
+```
+
+Module responsibilities:
+- `loader.py` → validation.
+- `engine.py` → selection algorithm (§8).
+- `modes.py` → interaction and prompt display (§6, §3.2).
+- `progress.py` → persistence (§10).
+
+---
+
+## 14. Design Philosophy
+
+- Tight feedback loops, minimal friction.
+- High repetition density.
+- Explicit control over difficulty (tense scope).
+- Clean separation of data, engine, and UI.
+- Deterministic validation of every data rule so data errors surface at load time,
+  not mid-drill.

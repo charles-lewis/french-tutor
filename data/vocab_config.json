@@ -1,0 +1,15 @@
+{
+  "direction": "fr2en",
+  "pos_scope": "all",
+  "sources": [
+    "vocab_apartment.json"
+  ],
+  "data": {
+    "verbs": "data/verbs.json",
+    "vocab": [
+      "data/vocab.json",
+      "data/vocab_apartment.json"
+    ],
+    "progress": "data/vocab_progress.json"
+  }
+}
