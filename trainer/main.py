@@ -152,8 +152,12 @@ class Session(object):
 
     def _drill_compound(self, verb, tkey):
         person = random.choice(list(engine.PERSONS))
+        tense = verb["tenses"][tkey]
+        gender = "both"
+        if "feminine" in tense:
+            gender = "f" if random.random() < 0.5 else "m"
         while True:
-            line, expected = modes.prompt(verb, tkey, person, "both")
+            line, expected = modes.prompt(verb, tkey, person, gender)
             print(line)
             t0 = time.monotonic()
             try:
