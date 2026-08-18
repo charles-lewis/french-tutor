@@ -89,6 +89,13 @@ class PromptTest(unittest.TestCase):
         self.assertEqual(expected, "il a fini")
         self.assertIn("[il]?", line)
 
+    def test_avoir_compound_elision_no_extra_space(self):
+        finir = make_verb("finir", auxiliary="avoir", present=ALLER_PRESENT,
+                          pc_masc=["ai fini", "as fini", "a fini",
+                                   "avons fini", "avez fini", "ont fini"])
+        _, expected = modes.prompt(finir, "pass\u00e9_compos\u00e9", 0, "m")
+        self.assertEqual(expected, "j'ai fini")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -80,7 +80,7 @@ def prompt(verb, tense_key, person, gender):
         pronoun = pronoun_table[person]
         if person == 0 and starts_with_vowel(expected):
             pronoun = "j'"
-        full_expected = pronoun + " " + expected
+        full_expected = pronoun + (" " if not pronoun.endswith("'") else "") + expected
         line = "%s (%s) - %s - [%s]?" % (
             verb["infinitive"], verb["translation"], tense["label"],
             pronoun_table[person])
