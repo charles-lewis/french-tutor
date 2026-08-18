@@ -160,25 +160,31 @@ class PerfectVerbNamesTest(unittest.TestCase):
     def _wrong(self):
         return engine.ItemState(last_seen=self.NOW, last_result="incorrect")
 
+    def _verb(self, name, tenses=None):
+        if tenses is None:
+            tenses = {"present": {"label": "présent", "type": "simple"}}
+        return {"infinitive": name, "tenses": tenses}
+
     def test_empty(self):
         self.assertEqual(engine.perfect_verb_names([], {}), set())
 
     def test_all_correct(self):
-        verbs = [{"infinitive": "aller"}, {"infinitive": "finir"}]
-        units = [(verbs[0], "present"), (verbs[1], "present")]
+        v1 = self._verb("aller")
+        v2 = self._verb("finir")
+        units = [(v1, "present"), (v2, "present")]
         states = {}
-        for v in verbs:
+        for v in (v1, v2):
             for p in engine.PERSONS:
                 states[engine.key(v["infinitive"], "present", p)] = self._correct()
         self.assertEqual(engine.perfect_verb_names(units, states), {"aller", "finir"})
 
     def test_untested_excluded(self):
-        verb = {"infinitive": "aller"}
+        verb = self._verb("aller")
         units = [(verb, "present")]
         self.assertEqual(engine.perfect_verb_names(units, {}), set())
 
     def test_any_wrong_excludes_verb(self):
-        verb = {"infinitive": "aller"}
+        verb = self._verb("aller")
         units = [(verb, "present")]
         states = {}
         for p in engine.PERSONS:
@@ -187,7 +193,9 @@ class PerfectVerbNamesTest(unittest.TestCase):
         self.assertEqual(engine.perfect_verb_names(units, states), set())
 
     def test_missing_tense_in_scope_excludes(self):
-        verb = {"infinitive": "aller"}
+        tenses = {"present": {"label": "présent", "type": "simple"},
+                  "imparfait": {"label": "imparfait", "type": "simple"}}
+        verb = self._verb("aller", tenses)
         units = [(verb, "present"), (verb, "imparfait")]
         states = {}
         for p in engine.PERSONS:
@@ -195,9 +203,23 @@ class PerfectVerbNamesTest(unittest.TestCase):
         self.assertEqual(engine.perfect_verb_names(units, states), set())
 
     def test_perfect_only_in_own_scope(self):
-        verb = {"infinitive": "aller"}
+        verb = self._verb("aller")
         units = [(verb, "present")]
         states = {engine.key("aller", "imparfait", 0): self._wrong()}
+        self.assertEqual(engine.perfect_verb_names(units, states), set())
+
+    def test_compound_only_checks_person_zero(self):
+        tense = {"passé_composé": {"label": "passé composé", "type": "compound"}}
+        verb = self._verb("venir", tense)
+        units = [(verb, "passé_composé")]
+        states = {engine.key("venir", "passé_composé", 0): self._correct()}
+        self.assertEqual(engine.perfect_verb_names(units, states), {"venir"})
+
+    def test_compound_wrong_at_zero_excludes(self):
+        tense = {"passé_composé": {"label": "passé composé", "type": "compound"}}
+        verb = self._verb("venir", tense)
+        units = [(verb, "passé_composé")]
+        states = {engine.key("venir", "passé_composé", 0): self._wrong()}
         self.assertEqual(engine.perfect_verb_names(units, states), set())
 
 

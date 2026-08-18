@@ -145,13 +145,16 @@ def perfect_verb_names(units, states):
     correctly (all items tested, all last results correct)."""
     groups = {}
     for verb, tense_key in units:
-        groups.setdefault(verb["infinitive"], []).append(tense_key)
+        groups.setdefault(verb["infinitive"], []).append((tense_key, verb))
     perfect = set()
-    for name, tense_keys in groups.items():
+    for name, tense_items in groups.items():
         tested = False
         ok = True
-        for tense_key in tense_keys:
-            for p in PERSONS:
+        for tense_key, verb in tense_items:
+            tense_type = verb["tenses"][tense_key]["type"]
+            # Compound tenses record only under person 0
+            persons_to_check = [0] if tense_type == "compound" else PERSONS
+            for p in persons_to_check:
                 st = get_state(states, name, tense_key, p)
                 if st.last_seen is None:
                     ok = False
