@@ -299,39 +299,27 @@ class Session(object):
                 acc = engine.windowed_accuracy(st)
                 if acc is None:
                     continue
+                n_correct = sum(st.recent_results)
+                n_total = len(st.recent_results)
                 rows.append((verb["infinitive"], tkey, p,
-                             len(st.recent_results), engine.windowed_avg_time(st),
+                             n_total, n_correct, engine.windowed_avg_time(st),
                              st.streak, st.longest_streak, acc))
-        rows.sort(key=lambda r: (r[7], r[0], r[1], r[2]))
+        rows.sort(key=lambda r: (r[8], r[0], r[1], r[2]))
         print("\n--- Items with recent attempts (%d) ---" % len(rows))
         for r in rows[:20]:
-            avg = "%.1fs" % r[4] if r[4] is not None else "-"
-            print("  %-12s %-14s p%d  n=%-3d acc=%5.1f%%  streak=%d/%d  avg=%s"
-                  % (r[0], r[1], r[2], r[3], r[7], r[5], r[6], avg))
+            avg = "%.1fs" % r[5] if r[5] is not None else "-"
+            print("  %-12s %-14s p%d  n=%-3d correct=%-3d acc=%5.1f%%  streak=%d/%d  avg=%s"
+                  % (r[0], r[1], r[2], r[3], r[4], r[8], r[6], r[7], avg))
 
     def report(self):
         self.show_stats()
-        print("\n--- Weakest verbs (scope) ---")
-        acc_by_verb = {}
-        for verb, tkey in self.units:
-            totals = []
-            for p in engine.PERSONS:
-                st = engine.get_state(self.states, verb["infinitive"], tkey, p)
-                acc = engine.windowed_accuracy(st)
-                if acc is not None:
-                    totals.append((acc, len(st.recent_results)))
-            if totals:
-                wsum = sum(acc * n for acc, n in totals)
-                nsum = sum(n for _, n in totals)
-                acc_by_verb[verb["infinitive"]] = (wsum / nsum if nsum else 0.0, nsum)
-        for name, (acc, tot) in sorted(acc_by_verb.items(), key=lambda kv: kv[1][0])[:5]:
-            print("  %-12s acc=%5.1f%%  (n=%d)" % (name, acc, tot))
 
+        session_verbs = set(self.stats["by_verb"].keys())
         perfect = engine.perfect_verb_names(self.units, self.states)
-        total = len(set(v["infinitive"] for v, _ in self.units))
-        print("\n--- Perfect verbs (last tested) ---")
-        print("  %d of %d verbs answered perfectly the last time tested"
-              % (len(perfect), total))
+        tested_perfect = perfect & session_verbs
+        print("\n--- Perfect verbs (this session) ---")
+        print("  %d of %d verbs tested answered perfectly the last time tested"
+              % (len(tested_perfect), len(session_verbs)))
 
 
 # --- entry -----------------------------------------------------------------
