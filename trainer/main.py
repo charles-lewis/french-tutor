@@ -107,6 +107,7 @@ class Session(object):
             "start": time.monotonic(),
             "by_tense": {},
             "by_verb": {},
+            "session_items": set(),
         }
         self.rebuild()
 
@@ -283,6 +284,7 @@ class Session(object):
             self.stats["incorrect"] += 1
         self.stats["by_tense"][tkey] = self.stats["by_tense"].get(tkey, 0) + 1
         self.stats["by_verb"][verb["infinitive"]] = self.stats["by_verb"].get(verb["infinitive"], 0) + 1
+        self.stats["session_items"].add((verb["infinitive"], tkey, person))
         progress.save_progress(str(PROGRESS_PATH), self.states)
 
     # -- reporting --
@@ -304,6 +306,8 @@ class Session(object):
         rows = []
         for verb, tkey in self.units:
             for p in engine.PERSONS:
+                if (verb["infinitive"], tkey, p) not in self.stats["session_items"]:
+                    continue
                 st = engine.get_state(self.states, verb["infinitive"], tkey, p)
                 acc = engine.windowed_accuracy(st)
                 if acc is None:
@@ -314,7 +318,7 @@ class Session(object):
                              n_total, n_correct, engine.windowed_avg_time(st),
                              st.streak, st.longest_streak, acc, st.expected))
         rows.sort(key=lambda r: (r[8], r[0], r[1], r[2]))
-        print("\n--- Items with recent attempts (%d) ---" % len(rows))
+        print("\n--- Items this session (%d) ---" % len(rows))
         for r in rows[:20]:
             avg = "%.1fs" % r[5] if r[5] is not None else "-"
             expected_str = r[9] if r[9] else "-"
