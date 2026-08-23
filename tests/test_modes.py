@@ -35,7 +35,7 @@ class PromptTest(unittest.TestCase):
                                pc_masc=ALLER_PC, pc_fem=ALLER_PC_FEM)
 
     def test_elision_on_vowel_start(self):
-        line, expected = modes.prompt(self.aller, "present", 0, "m")
+        line, expected, full_expected = modes.prompt(self.aller, "present", 0, "m")
         self.assertEqual(expected, "vais")
         self.assertIn("je ->", line)
 
@@ -45,17 +45,17 @@ class PromptTest(unittest.TestCase):
         self.assertNotIn("j'", modes.prompt(self.aller, "present", 0, "m")[0])
 
     def test_masculine_prompt(self):
-        line, expected = modes.prompt(self.aller, "pass\u00e9_compos\u00e9", 2, "m")
+        line, expected, full_expected = modes.prompt(self.aller, "pass\u00e9_compos\u00e9", 2, "m")
         self.assertEqual(expected, "il est all\u00e9")
         self.assertIn("[il]?", line)
 
     def test_feminine_prompt_uses_elle(self):
-        line, expected = modes.prompt(self.aller, "pass\u00e9_compos\u00e9", 2, "f")
+        line, expected, full_expected = modes.prompt(self.aller, "pass\u00e9_compos\u00e9", 2, "f")
         self.assertEqual(expected, "elle est all\u00e9e")
         self.assertIn("[elle]?", line)
 
     def test_feminine_person_5_uses_elles(self):
-        line, expected = modes.prompt(self.aller, "pass\u00e9_compos\u00e9", 5, "f")
+        line, expected, full_expected = modes.prompt(self.aller, "pass\u00e9_compos\u00e9", 5, "f")
         self.assertEqual(expected, "elles sont all\u00e9es")
         self.assertIn("[elles]?", line)
 
@@ -78,14 +78,14 @@ class PromptTest(unittest.TestCase):
         self.assertIn("aller (to go) - pr\u00e9sent", header)
 
     def test_prompt_includes_translation(self):
-        line, _ = modes.prompt(self.aller, "present", 1, "m")
+        line, _, _ = modes.prompt(self.aller, "present", 1, "m")
         self.assertIn("aller (to go)", line)
 
     def test_avoir_compound_shows_helper_and_participle(self):
         finir = make_verb("finir", auxiliary="avoir", present=ALLER_PRESENT,
                           pc_masc=["ai fini", "as fini", "a fini",
                                    "avons fini", "avez fini", "ont fini"])
-        line, expected = modes.prompt(finir, "pass\u00e9_compos\u00e9", 2, "m")
+        line, expected, full_expected = modes.prompt(finir, "pass\u00e9_compos\u00e9", 2, "m")
         self.assertEqual(expected, "il a fini")
         self.assertIn("[il]?", line)
 
@@ -93,7 +93,7 @@ class PromptTest(unittest.TestCase):
         finir = make_verb("finir", auxiliary="avoir", present=ALLER_PRESENT,
                           pc_masc=["ai fini", "as fini", "a fini",
                                    "avons fini", "avez fini", "ont fini"])
-        _, expected = modes.prompt(finir, "pass\u00e9_compos\u00e9", 0, "m")
+        _, expected, _ = modes.prompt(finir, "pass\u00e9_compos\u00e9", 0, "m")
         self.assertEqual(expected, "j'ai fini")
 
 

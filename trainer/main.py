@@ -156,8 +156,10 @@ class Session(object):
         gender = "both"
         if "feminine" in tense:
             gender = "f" if random.random() < 0.5 else "m"
+        st = engine.get_state(self.states, verb["infinitive"], tkey, person)
+        st.reprompted = False
         while True:
-            line, expected = modes.prompt(verb, tkey, person, gender)
+            line, expected, full_expected = modes.prompt(verb, tkey, person, gender)
             print(line)
             t0 = time.monotonic()
             try:
@@ -171,13 +173,16 @@ class Session(object):
                 if raw == ":new":
                     return "new"
                 if raw in (":skip", ":reveal"):
-                    self.record(verb, tkey, 0, False, None)
+                    st.reprompted = True
+                    self.record(verb, tkey, 0, False, None, full_expected)
                     print("  " + modes.red("[X] expected: %s" % expected))
                     return "continue"
                 print("  unknown command: %s" % raw)
                 continue
             correct = modes.normalize(raw).casefold() == modes.normalize(expected).casefold()
-            self.record(verb, tkey, 0, correct, seconds)
+            if not correct:
+                st.reprompted = True
+            self.record(verb, tkey, 0, correct, seconds, full_expected)
             if correct:
                 print("  " + modes.green("[OK]"))
                 return "continue"
@@ -186,8 +191,10 @@ class Session(object):
 
     def ask(self, verb, tkey, person):
         first_try = True
+        st = engine.get_state(self.states, verb["infinitive"], tkey, person)
+        st.reprompted = False
         while True:
-            line, expected = modes.prompt(verb, tkey, person, "both")
+            line, expected, full_expected = modes.prompt(verb, tkey, person, "both")
             print(line)
             t0 = time.monotonic()
             try:
@@ -196,12 +203,14 @@ class Session(object):
                 return "quit", None
             seconds = time.monotonic() - t0
             if raw.startswith(":"):
-                result, correct = self.command(verb, tkey, person, raw, expected)
+                result, correct = self.command(verb, tkey, person, raw, full_expected)
                 if result == "repeat":
                     continue
                 return result, correct
             correct = modes.normalize(raw).casefold() == modes.normalize(expected).casefold()
-            self.record(verb, tkey, person, correct, seconds, expected)
+            if not correct:
+                st.reprompted = True
+            self.record(verb, tkey, person, correct, seconds, full_expected)
             if correct:
                 print("  " + modes.green("[OK]"))
                 return "continue", first_try
@@ -234,11 +243,11 @@ class Session(object):
         if name == ":new":
             return "new", None
         if name == ":skip":
-            self.record(verb, tkey, person, False, None)
+            self.record(verb, tkey, person, False, None, expected)
             print("  " + modes.red("[X] skipped - expected: %s" % expected))
             return "next", False
         if name == ":reveal":
-            self.record(verb, tkey, person, False, None)
+            self.record(verb, tkey, person, False, None, expected)
             print("  " + modes.red("[X] expected: %s" % expected))
             return "next", False
         if name == ":repeat":

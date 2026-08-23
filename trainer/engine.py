@@ -25,6 +25,7 @@ class ItemState(object):
         self.recent_results = recent_results if recent_results is not None else []
         self.recent_times = recent_times if recent_times is not None else []
         self.expected = expected
+        self.reprompted = False
 
     def to_dict(self):
         return {
@@ -38,11 +39,12 @@ class ItemState(object):
             "recent_results": self.recent_results,
             "recent_times": self.recent_times,
             "expected": self.expected,
+            "reprompted": self.reprompted,
         }
 
     @classmethod
     def from_dict(cls, data):
-        return cls(
+        st = cls(
             success_count=data.get("success_count", 0),
             failure_count=data.get("failure_count", 0),
             streak=data.get("streak", 0),
@@ -54,6 +56,8 @@ class ItemState(object):
             recent_times=data.get("recent_times", []),
             expected=data.get("expected"),
         )
+        st.reprompted = data.get("reprompted", False)
+        return st
 
 
 def key(infinitive, tense_key, person_index):
@@ -165,7 +169,7 @@ def perfect_verb_names(units, states):
                     ok = False
                 else:
                     tested = True
-                    if st.last_result != "correct":
+                    if st.last_result != "correct" or st.reprompted:
                         ok = False
         if tested and ok:
             perfect.add(name)

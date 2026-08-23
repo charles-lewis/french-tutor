@@ -84,14 +84,15 @@ def prompt(verb, tense_key, person, gender):
         line = "%s (%s) - %s - [%s]?" % (
             verb["infinitive"], verb["translation"], tense["label"],
             pronoun_table[person])
-        return line, full_expected
+        return line, full_expected, full_expected
 
     pronoun = FEM_PRONOUNS[person] if variant == "feminine" else PRONOUNS[person]
     if person == 0 and starts_with_vowel(expected):
         pronoun = "j'"
+    full_expected = pronoun + " " + expected
     line = "%s (%s) - %s - %s ->" % (
         verb["infinitive"], verb["translation"], tense["label"], pronoun)
-    return line, expected
+    return line, expected, full_expected
 
 
 def drill_header(verb, tense_key):
