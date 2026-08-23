@@ -201,7 +201,7 @@ class Session(object):
                     continue
                 return result, correct
             correct = modes.normalize(raw).casefold() == modes.normalize(expected).casefold()
-            self.record(verb, tkey, person, correct, seconds)
+            self.record(verb, tkey, person, correct, seconds, expected)
             if correct:
                 print("  " + modes.green("[OK]"))
                 return "continue", first_try
@@ -263,9 +263,9 @@ class Session(object):
 
     # -- recording --
 
-    def record(self, verb, tkey, person, correct, seconds):
+    def record(self, verb, tkey, person, correct, seconds, expected=None):
         st = engine.get_state(self.states, verb["infinitive"], tkey, person)
-        engine.record_answer(st, correct, seconds, datetime.now())
+        engine.record_answer(st, correct, seconds, datetime.now(), expected)
         self.states[engine.key(verb["infinitive"], tkey, person)] = st
         self.stats["prompts"] += 1
         if correct:
@@ -303,13 +303,14 @@ class Session(object):
                 n_total = len(st.recent_results)
                 rows.append((verb["infinitive"], tkey, p,
                              n_total, n_correct, engine.windowed_avg_time(st),
-                             st.streak, st.longest_streak, acc))
+                             st.streak, st.longest_streak, acc, st.expected))
         rows.sort(key=lambda r: (r[8], r[0], r[1], r[2]))
         print("\n--- Items with recent attempts (%d) ---" % len(rows))
         for r in rows[:20]:
             avg = "%.1fs" % r[5] if r[5] is not None else "-"
-            print("  %-12s %-14s p%d  n=%-3d correct=%-3d acc=%5.1f%%  streak=%d/%d  avg=%s"
-                  % (r[0], r[1], r[2], r[3], r[4], r[8], r[6], r[7], avg))
+            expected_str = r[9] if r[9] else "-"
+            print("  %-12s %-14s p%d  n=%-3d correct=%-3d acc=%5.1f%%  streak=%d/%d  avg=%s  last=%s"
+                  % (r[0], r[1], r[2], r[3], r[4], r[8], r[6], r[7], avg, expected_str))
 
     def report(self):
         self.show_stats()

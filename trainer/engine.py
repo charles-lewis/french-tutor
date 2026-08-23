@@ -14,7 +14,7 @@ MAX_RECENT = 10
 class ItemState(object):
     def __init__(self, success_count=0, failure_count=0, streak=0, longest_streak=0,
                  last_seen=None, last_result=None, avg_response_time=None,
-                 recent_results=None, recent_times=None):
+                 recent_results=None, recent_times=None, expected=None):
         self.success_count = success_count
         self.failure_count = failure_count
         self.streak = streak
@@ -24,6 +24,7 @@ class ItemState(object):
         self.avg_response_time = avg_response_time
         self.recent_results = recent_results if recent_results is not None else []
         self.recent_times = recent_times if recent_times is not None else []
+        self.expected = expected
 
     def to_dict(self):
         return {
@@ -36,6 +37,7 @@ class ItemState(object):
             "avg_response_time": self.avg_response_time,
             "recent_results": self.recent_results,
             "recent_times": self.recent_times,
+            "expected": self.expected,
         }
 
     @classmethod
@@ -50,6 +52,7 @@ class ItemState(object):
             avg_response_time=data.get("avg_response_time"),
             recent_results=data.get("recent_results", []),
             recent_times=data.get("recent_times", []),
+            expected=data.get("expected"),
         )
 
 
@@ -102,10 +105,12 @@ def select_unit(units, states, now):
     return units[-1]
 
 
-def record_answer(state, correct, seconds, now):
+def record_answer(state, correct, seconds, now, expected=None):
     if correct:
         state.success_count += 1
         state.streak += 1
+        if expected is not None:
+            state.expected = expected
     else:
         state.failure_count += 1
         state.streak = 0
