@@ -81,9 +81,15 @@ def prompt(verb, tense_key, person, gender):
         if person == 0 and starts_with_vowel(expected):
             pronoun = "j'"
         full_expected = pronoun + (" " if not pronoun.endswith("'") else "") + expected
+        prompt_pronoun = pronoun_table[person]
+        # être-verbs agree with subject gender; the pronoun alone doesn't
+        # reveal it for je/tu/nous/vous, so add an explicit gender hint.
+        if "feminine" in tense and person in (0, 1, 3, 4):
+            gender_note = " (m)" if variant == "forms" else " (f)"
+            prompt_pronoun += gender_note
         line = "%s (%s) - %s - [%s]?" % (
             verb["infinitive"], verb["translation"], tense["label"],
-            pronoun_table[person])
+            prompt_pronoun)
         return line, full_expected, full_expected
 
     pronoun = FEM_PRONOUNS[person] if variant == "feminine" else PRONOUNS[person]

@@ -54,6 +54,22 @@ class PromptTest(unittest.TestCase):
         self.assertEqual(expected, "elle est all\u00e9e")
         self.assertIn("[elle]?", line)
 
+    def test_first_person_gender_hint_masculine(self):
+        line, expected, full_expected = modes.prompt(self.aller, "pass\u00e9_compos\u00e9", 0, "m")
+        self.assertEqual(expected, "je suis all\u00e9")
+        self.assertIn("[je (m)]?", line)
+
+    def test_first_person_gender_hint_feminine(self):
+        line, expected, full_expected = modes.prompt(self.aller, "pass\u00e9_compos\u00e9", 0, "f")
+        self.assertEqual(expected, "je suis all\u00e9e")
+        self.assertEqual(full_expected, "je suis all\u00e9e")
+        self.assertIn("(f)", line)
+
+    def test_second_person_gender_hint(self):
+        line, expected, full_expected = modes.prompt(self.aller, "pass\u00e9_compos\u00e9", 1, "f")
+        self.assertEqual(full_expected, "tu es all\u00e9e")
+        self.assertIn("[tu (f)]?", line)
+
     def test_feminine_person_5_uses_elles(self):
         line, expected, full_expected = modes.prompt(self.aller, "pass\u00e9_compos\u00e9", 5, "f")
         self.assertEqual(expected, "elles sont all\u00e9es")
