@@ -39,6 +39,29 @@ class SessionTest(unittest.TestCase):
             outcome = session.drill(verb, "present")
         return outcome, out.getvalue()
 
+    def _run_compound_drill(self, session, verb, answers, gender_value, person=0):
+        out = io.StringIO()
+        with mock.patch.object(main.consoleio, "input_line", side_effect=answers), \
+                mock.patch.object(main.random, "random", return_value=gender_value), \
+                mock.patch.object(main.random, "choice", return_value=person), \
+                contextlib.redirect_stdout(out):
+            outcome = session.drill(verb, "pass\u00e9_compos\u00e9")
+        return outcome, out.getvalue()
+
+    def test_compound_drill_person_zero_uses_masculine_hint(self):
+        session = _session([self.aller])
+        # random.random returns 1.0 -> gender "m"
+        outcome, out = self._run_compound_drill(session, self.aller, [":reveal"], 1.0)
+        self.assertEqual(outcome, "continue")
+        self.assertIn("je (m)", out)
+
+    def test_compound_drill_person_zero_uses_feminine_hint(self):
+        session = _session([self.aller])
+        # random.random returns 0.0 -> gender "f"
+        outcome, out = self._run_compound_drill(session, self.aller, [":reveal"], 0.0)
+        self.assertEqual(outcome, "continue")
+        self.assertIn("je (f)", out)
+
     def test_units_cover_all_verbs_and_tenses(self):
         session = _session([self.aller])
         self.assertEqual(len(session.units), 6)
