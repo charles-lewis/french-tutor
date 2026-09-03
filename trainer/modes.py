@@ -82,9 +82,10 @@ def prompt(verb, tense_key, person, gender):
             pronoun = "j'"
         full_expected = pronoun + (" " if not pronoun.endswith("'") else "") + expected
         prompt_pronoun = pronoun_table[person]
-        # être-verbs agree with subject gender; the pronoun alone doesn't
-        # reveal it for je/tu/nous/vous, so add an explicit gender hint.
-        if "feminine" in tense and person in (0, 1, 3, 4):
+        # Show a gender hint on every compound verb (including avoir) so it
+        # doesn't reveal the auxiliary. For je/tu/nous/vous the pronoun alone
+        # wouldn't clarify which agreement to expect otherwise.
+        if person in (0, 1, 3, 4):
             gender_note = " (m)" if variant == "forms" else " (f)"
             prompt_pronoun += gender_note
         line = "%s (%s) - %s - [%s]?" % (

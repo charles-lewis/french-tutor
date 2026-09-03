@@ -112,6 +112,15 @@ class PromptTest(unittest.TestCase):
         _, expected, _ = modes.prompt(finir, "pass\u00e9_compos\u00e9", 0, "m")
         self.assertEqual(expected, "j'ai fini")
 
+    def test_avoir_verb_also_shows_gender_hint_no_leak(self):
+        # avoir verbs must show the same hint as \u00eatre verbs, otherwise the
+        # hint would tip off which auxiliary the verb takes.
+        finir = make_verb("finir", auxiliary="avoir", present=ALLER_PRESENT,
+                          pc_masc=["ai fini", "as fini", "a fini",
+                                   "avons fini", "avez fini", "ont fini"])
+        line, _, _ = modes.prompt(finir, "pass\u00e9_compos\u00e9", 0, "m")
+        self.assertIn("(m)", line)
+
 
 if __name__ == "__main__":
     unittest.main()
